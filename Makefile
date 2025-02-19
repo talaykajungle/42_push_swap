@@ -6,10 +6,8 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 # Directories
-SRCDIR = src
-HEDDIR = header
-LIBDIR = import
-OBJDIR = obj
+SRCDIR = srcs
+LIBDIR = imports
 
 # Libraries
 LIBFT = $(LIBDIR)/libft

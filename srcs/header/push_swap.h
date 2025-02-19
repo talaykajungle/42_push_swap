@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:38:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/18 16:02:00 by tamutlu          ###   ########.fr       */
+/*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
+/*   Updated: 2025/02/19 16:48:34 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef LINKED_LIST_H
+# define LINKED_LIST_H
 
-int	ft_isalpha(int c)
+# include "../libft/libft.h"
+# include <limits.h>
+# include <stdbool.h>
+# include <stdlib.h>
+
+// struct represting a node in the linked list
+typedef struct s_list
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
-}
+	int				data;
+	struct s_list	*next;
+}					t_list;
+
+// Rules
+
+void	push_a(t_list **stackA, t_list **stackB);
+void	push_b(t_list **stackA, t_list **stackB);
+
+
+#endif

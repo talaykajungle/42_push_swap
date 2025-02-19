@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 19:02:07 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/18 16:02:44 by tamutlu          ###   ########.fr       */
+/*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
+/*   Updated: 2025/02/19 14:40:24 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_tolower(int c)
+int main(int argc, char const *argv[])
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	/* code */
+	return 0;
 }
