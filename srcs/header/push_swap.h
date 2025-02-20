@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/20 13:15:02 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/20 17:06:02 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,9 @@ void				rot_a(t_list **stackA, int i);
 void				rot_b(t_list **stackB, int i);
 void				rot_ab(t_list **stackA, t_list **stackB);
 
+//	rev_rot_ops
+void				rev_rot_a(t_list **stackA);
+void				rev_rot_b(t_list **stackB);
+void				rev_rot_ab(t_list **stackA, t_list **stackB);
 
 #endif
