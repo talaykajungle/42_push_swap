@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/19 16:48:34 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/20 13:15:02 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ typedef struct s_list
 }					t_list;
 
 // Rules
+// push ops
+void				push_a(t_list **stackA, t_list **stackB);
+void				push_b(t_list **stackA, t_list **stackB);
 
-void	push_a(t_list **stackA, t_list **stackB);
-void	push_b(t_list **stackA, t_list **stackB);
+// rot ops
+void				rot_a(t_list **stackA, int i);
+void				rot_b(t_list **stackB, int i);
+void				rot_ab(t_list **stackA, t_list **stackB);
 
 
 #endif
