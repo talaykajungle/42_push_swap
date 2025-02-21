@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/20 17:06:02 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/21 14:20:22 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@
 # include <stdbool.h>
 # include <stdlib.h>
 
-// struct represting a node in the linked list
+//	struct represting a node in the linked list
 typedef struct s_list
 {
 	int				data;
 	struct s_list	*next;
 }					t_list;
 
-// Rules
-// push ops
+//	Rules
+//	push ops
 void				push_a(t_list **stackA, t_list **stackB);
 void				push_b(t_list **stackA, t_list **stackB);
 
-// rot ops
+//	rot ops
 void				rot_a(t_list **stackA, int i);
 void				rot_b(t_list **stackB, int i);
 void				rot_ab(t_list **stackA, t_list **stackB);
@@ -39,5 +39,10 @@ void				rot_ab(t_list **stackA, t_list **stackB);
 void				rev_rot_a(t_list **stackA);
 void				rev_rot_b(t_list **stackB);
 void				rev_rot_ab(t_list **stackA, t_list **stackB);
+
+//	swap_ops
+void				swap_a(t_list **stackA);
+void				swap_b(t_list **stackB);
+void				swap_ab(t_list **stackA, t_list **stackB);
 
 #endif
