@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:35 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/20 17:43:52 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/21 15:56:58 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ void	swap_ab(t_list **stackA, t_list **stackB)
 {
 	swap_a(stackA);
 	swap_b(stackB);
+	write(1,"ss\n",3)
 }

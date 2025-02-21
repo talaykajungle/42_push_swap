@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:32 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/20 17:10:25 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/21 15:59:23 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ void	rev_rot_ab(t_list **stackA, t_list **stackB)
 {
 	rev_rot_a(stackA);
 	rev_rot_b(stackB);
+	write(1,"rrr\n",4);
 }
