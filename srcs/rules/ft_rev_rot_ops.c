@@ -6,11 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:32 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/21 15:59:23 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/22 15:12:22 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+//	Shifts down all elements of stack a by 1
 
 void	rev_rot_a(t_list **stackA)
 {
@@ -30,6 +32,8 @@ void	rev_rot_a(t_list **stackA)
 	write(1, "rra\n", 4);
 }
 
+//	Shifts down all elements of stack b by 1
+
 void	rev_rot_b(t_list **stackB)
 {
 	t_list	*tmp;
@@ -48,9 +52,11 @@ void	rev_rot_b(t_list **stackB)
 	write(1, "rrb\n", 4);
 }
 
+// Reverse rotates both stacks
+
 void	rev_rot_ab(t_list **stackA, t_list **stackB)
 {
 	rev_rot_a(stackA);
 	rev_rot_b(stackB);
-	write(1,"rrr\n",4);
+	write(1, "rrr\n", 4);
 }
