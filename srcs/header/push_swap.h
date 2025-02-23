@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/21 14:20:22 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/23 16:53:29 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,9 @@ void				rev_rot_ab(t_list **stackA, t_list **stackB);
 void				swap_a(t_list **stackA);
 void				swap_b(t_list **stackB);
 void				swap_ab(t_list **stackA, t_list **stackB);
+
+//	Sorts
+//	Sort checker
+int					sorted(t_list *stackA);
 
 #endif
