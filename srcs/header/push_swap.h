@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/23 16:53:29 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/24 18:15:58 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void				push_a(t_list **stackA, t_list **stackB);
 void				push_b(t_list **stackA, t_list **stackB);
 
 //	rot ops
-void				rot_a(t_list **stackA, int i);
-void				rot_b(t_list **stackB, int i);
+void				rot_a(t_list **stackA);
+void				rot_b(t_list **stackB);
 void				rot_ab(t_list **stackA, t_list **stackB);
 
 //	rev_rot_ops
@@ -47,6 +47,9 @@ void				swap_ab(t_list **stackA, t_list **stackB);
 
 //	Sorts
 //	Sort checker
-int					sorted(t_list *stackA);
+int					sorting(t_list *stackA);
+int					find_minimum(t_list *stackA);
+void				sort3(t_list **stackA);
+void				sort5(t_list **stackA);
 
 #endif

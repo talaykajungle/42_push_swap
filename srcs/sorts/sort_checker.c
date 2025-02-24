@@ -6,13 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 16:16:47 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/23 16:53:11 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/24 16:52:36 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sorted(t_list *stackA)
+int	sorting(t_list *stackA)
 {
 	t_list *temp;
 
