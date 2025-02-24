@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/24 18:15:58 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/24 19:05:35 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void				swap_ab(t_list **stackA, t_list **stackB);
 //	Sorts
 //	Sort checker
 int					sorting(t_list *stackA);
-int					find_minimum(t_list *stackA);
+int					minimum(t_list *stackA);
 void				sort3(t_list **stackA);
 void				sort5(t_list **stackA);
 

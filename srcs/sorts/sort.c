@@ -6,13 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:24:26 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/24 19:00:57 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/24 19:05:16 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_minimum(t_list *stackA)
+int	minimum(t_list *stackA)
 {
 	int		min;
 	t_list	*stacknow;
@@ -34,12 +34,12 @@ void	sort3(t_list **stackA)
 {
 	if (sorting(*stackA))
 		return (0);
-	if (find_minimum(*stackA) == 0)
+	if (minimum(*stackA) == 0)
 	{
 		swap_a(stackA);
 		rot_a(stackA);
 	}
-	else if (find_minimum(*stackA) == 1)
+	else if (minimum(*stackA) == 1)
 	{
 		if ((*stackA)->data < (*stackA)->next->next->data)
 			swap_a(*stackA);
@@ -56,6 +56,7 @@ void	sort3(t_list **stackA)
 	}
 }
 
-// void	sort5(t_list **stackA, t_list **stackB)
-// {
-// }
+void	sort5(t_list **stackA, t_list **stackB)
+{
+	
+}
