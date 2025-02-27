@@ -6,11 +6,11 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:27 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/22 15:21:52 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/27 17:26:14 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../header/push_swap.h"
 
 //	Takes the first element at the top of stack b
 //	and places it at the top of stack a

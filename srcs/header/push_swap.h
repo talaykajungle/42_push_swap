@@ -6,17 +6,19 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/24 19:05:35 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/27 18:04:26 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LINKED_LIST_H
-# define LINKED_LIST_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-# include "../libft/libft.h"
+//# include "../libft/libft.h"
 # include <limits.h>
 # include <stdbool.h>
+# include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 //	struct represting a node in the linked list
 typedef struct s_list
@@ -24,6 +26,11 @@ typedef struct s_list
 	int				data;
 	struct s_list	*next;
 }					t_list;
+
+//	Main
+int					main(int argc, char **argv);
+void				print_stack(t_list *stack);
+
 
 //	Rules
 //	push ops
@@ -47,9 +54,11 @@ void				swap_ab(t_list **stackA, t_list **stackB);
 
 //	Sorts
 //	Sort checker
-int					sorting(t_list *stackA);
+int					sorted(t_list *stackA);
 int					minimum(t_list *stackA);
+void				put_to_top(t_list **stackA, int index, int size);
 void				sort3(t_list **stackA);
-void				sort5(t_list **stackA);
+void				sort4(t_list **stackA, t_list **stackB);
+void				sort5(t_list **stackA, t_list **stackB);
 
 #endif

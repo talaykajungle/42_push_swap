@@ -6,20 +6,20 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 16:16:47 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/24 16:52:36 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/27 17:26:02 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../header/push_swap.h"
 
-int	sorting(t_list *stackA)
+int	sorted(t_list *stackA)
 {
-	t_list *temp;
+	t_list	*tmp;
 
 	while (stackA && stackA->next)
 	{
-		temp = stackA->next;
-		if (stackA->data > temp->data)
+		tmp = stackA->next;
+		if (stackA->data > tmp->data)
 			return (0);
 		stackA = stackA->next;
 	}
