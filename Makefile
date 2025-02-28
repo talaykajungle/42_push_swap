@@ -1,58 +1,52 @@
-# Name
+# Name of the executable
 NAME = push_swap
 
-# Compiler and Flags
+# Compiler
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
 
-# Directories
+# Compiler flags
+CFLAGS = -Wall -Wextra -Werror
+
+# Source directories
 SRCDIR = srcs
-LIBDIR = imports
+LIBFT = ./srcs/imports/libft
 
-# Libraries
-LIBFT = $(LIBDIR)/libft
-FT_PRINTF = $(LIBDIR)/ft_printf
+# Source files (list all .c files)
+SRCS = $(SRCDIR)/main/main.c \
+       $(SRCDIR)/rules/ft_push_ops.c \
+       $(SRCDIR)/rules/ft_rev_rot_ops.c \
+       $(SRCDIR)/rules/ft_rot_ops.c \
+       $(SRCDIR)/rules/ft_swap_ops.c \
+       $(SRCDIR)/sorts/sort_checker.c \
+       $(SRCDIR)/sorts/sort.c
 
-# Source & Object files
+OBJS = $(SRCS:.c=.o)
 
-SRC = 
+# Library files
+LIBFT_A = $(LIBFT)/libft.a
 
-OBJ = $(SRC: .c=.o)
+# Default target
+all: $(NAME)
 
-# Executable name
-TARGET = push_swap
+# Rule to create the executable
+$(NAME): $(OBJS) $(LIBFT_A)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
 
-# Included Directories
-INCLUDES = -I$(HEDDIR) -I$(LIBFT) -I$(FT_PRINTF)/$(HEDDIR)
-
-# Included Libraries
-LIBS = -L$(LIBFT) -lft -L$(FT_PRINTF) -lftprintf
-
-# Default TARGET
-all: $(TARGET)
-
-# Compile object files
-%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-# Build the target executable
-$(TARGET): $(OBJS)
+# Build libft
+$(LIBFT_A):
 	$(MAKE) -C $(LIBFT)
-	$(MAKE) -C $(FT_PRINTF)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(TARGET)
 
 # Clean rule
 clean:
-	rm -f $(TARGET)
-	$(make) -C $(LIBFTDIR) clean
-	$(make) -C $(FT_PRINTF) clean
+	rm -f $(OBJS)
+	$(MAKE) -C $(LIBFT) clean
 
-# fclean rule
+# Fclean rule
 fclean: clean
-	rm -f $(TARGET)
-	cd $(LIBFTDIR) && make fclean
+	rm -f $(NAME)
+	$(MAKE) -C $(LIBFT) fclean
 
-# Rebuild rule
+# Rebuild everything
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re $(LIBFT_A)

@@ -20,9 +20,9 @@ makelibft:
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Rule to create the library
-$(NAME): makelibft $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+# # Rule to create the library
+# $(NAME): makelibft $(OBJS)
+# 	ar rcs $(NAME) $(OBJS)
 
 # Clean rule
 clean:

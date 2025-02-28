@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_pointer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 18:29:31 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/26 14:38:01 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/12/21 18:54:55 by tamutlu           #+#    #+#             */
+/*   Updated: 2025/02/28 16:10:41 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_pointer(uintptr_t ptr, int *len)
 {
-	size_t	i;
+	char		str[sizeof(uintptr_t) * 2 + 1];
+	int			i;
+	const char	*hex_base;
 
+	hex_base = "0123456789abcdef";
 	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (ptr == 0)
+	{
+		ft_putstr("(null)", len);
+		return ;
+	}
+	if (write(1, "0x", 2) != 2)
+		return ;
+	(*len) += 2;
+	while (ptr)
+	{
+		str[i++] = hex_base[ptr % 16];
+		ptr /= 16;
+	}
+	while (i--)
+		ft_putchar(str[i], len);
 }

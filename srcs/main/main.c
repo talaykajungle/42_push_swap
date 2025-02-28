@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/27 18:38:00 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/28 16:40:04 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_stack(t_list *stack)
 {
 	while (stack)
 	{
-		printf("%d ", stack->data);
+		printf("%d \n", stack->data);
 		stack = stack->next;
 	}
 	printf("\n");
@@ -38,6 +38,8 @@ void	add_to_stack(t_list **stack, int data)
 {
 	t_list	*new_node;
 
+	if (!stack)
+		return;
 	new_node = create_node(data);
 	if (!new_node)
 		return ;
@@ -68,11 +70,11 @@ int	main(int argc, char *argv[])
 	stack_b = NULL;
 	if (argc < 2)
 	{
-		printf("Usage: %s <numbers>\n", argv[0]);
+		ft_printf("Usage: %s <numbers>\n", argv[0]);
 		return (1);
 	}
 	for (i = argc - 1; i > 0; i--)
-		add_to_stack(&stack_a, atoi(argv[i]));
+		add_to_stack(&stack_a, ft_atoi(argv[i]));
 	printf("Initial stack A: ");
 	print_stack(stack_a);
 	if (argc - 1 == 3)
@@ -82,8 +84,8 @@ int	main(int argc, char *argv[])
 	else if (argc - 1 == 5)
 		sort5(&stack_a, &stack_b);
 	else
-		printf("Sorting not implemented for %d elements\n", argc - 1);
-	printf("Sorted stack A: ");
+		ft_printf("Sorting not implemented for %d elements\n", argc - 1);
+	ft_printf("Sorted stack A: ");
 	print_stack(stack_a);
 	// Free stack_a using a while loop
 	while (stack_a)
@@ -101,3 +103,4 @@ int	main(int argc, char *argv[])
 	}
 	return (0);
 }
+//cc ./srcs/header/push_swap.h ./srcs/rules/*.c ./srcs/sorts/*.c ./srcs/main/main.c 

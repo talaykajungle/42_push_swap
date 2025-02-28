@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:32 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/27 18:05:12 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/28 16:50:24 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	rev_rot_a(t_list **stackA)
 	{
 		tmp = tmp->next;
 	}
+	last = tmp;
 	tmp->next = *stackA;
 	last->next = *stackA;
 	*stackA = last;
@@ -46,6 +47,7 @@ void	rev_rot_b(t_list **stackB)
 	{
 		tmp = tmp->next;
 	}
+	last = tmp;
 	tmp->next = *stackB;
 	last->next = *stackB;
 	*stackB = last;

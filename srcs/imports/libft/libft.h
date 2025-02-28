@@ -6,13 +6,14 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/10 11:33:25 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/28 16:11:36 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "./ft_printf/ft_printf.h"
 # include <ctype.h>
 # include <fcntl.h>
 # include <limits.h>
@@ -21,12 +22,15 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <stdbool.h>
+# include <stdint.h>
 
-typedef struct s_list
+typedef struct s_list_libft
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+}					t_list_libft;
 
 size_t				ft_strlen(const char *s);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -63,5 +67,13 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_itoa(int n);
 int					ft_atoi(const char *str);
 char				*ft_strjoin(char const *s1, char const *s2);
+void				ft_putchar(char c, int *len);
+void				ft_putstr(char *s, int *len);
+void				ft_putnbr(int n, int *len);
+void				ft_puthex(unsigned int a, char format, int *len);
+void				ft_unsigned(unsigned int a, int *len);
+void				ft_pointer(uintptr_t ptr, int *len);
+void				ft_handle_format(va_list *args, char c, int *len);
+int					ft_printf(const char *format, ...);
 
 #endif

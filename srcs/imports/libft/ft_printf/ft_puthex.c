@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 19:01:35 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/10 12:05:05 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/12/23 18:47:27 by tamutlu           #+#    #+#             */
+/*   Updated: 2025/02/28 16:11:07 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_puthex(unsigned int a, char format, int *len)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	if (a == 0)
 	{
-		if (*(unsigned char *)(s + i) == (unsigned char)c)
-		{
-			return ((void *)(s + i));
-		}
-		i++;
+		write(1, "0", 1);
+		(*len)++;
+		return ;
 	}
-	return (NULL);
+	if (a >= 16)
+		ft_puthex(a / 16, format, len);
+	if (format == 'X')
+		write(1, &"0123456789ABCDEF"[a % 16], 1);
+	else if (format == 'x')
+		write(1, &"0123456789abcdef"[a % 16], 1);
+	(*len)++;
 }
