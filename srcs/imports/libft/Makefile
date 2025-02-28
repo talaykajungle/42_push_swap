@@ -1,3 +1,5 @@
+MAKEFLAGS += --silent
+
 NAME = libft.a
 
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -19,26 +21,31 @@ CFLAGS = -Wall -Wextra -Werror
 
 
 all: $(NAME)
-
+	@echo "Done"
 # makeprintf:
 # 		make -C $(PRINTFDIR)
 # 		cd $(PRINTFDIR)/$(PRINTFNAME) $(NAME)
 
 $(NAME): $(OBJS)
-	ar $(ARFLAGS) $(NAME) $(OBJS)
+	@ar $(ARFLAGS) $(NAME) $(OBJS)
+	@echo "Done"
 
 # $(FT_PRINTF):
 # 	$(MAKE) -C $(PRINTFDIR)`
 
 so: $(OBJS) $(OBJS_BONUS)
 	$(CC) -nostartfiles -fPIC $(CFLAGS) -shared -o $(NAME).so $(OBJS) $(OBJS_BONUS)
+	@echo "Done"
 
 clean:
 	$(RM) $(OBJS)
+	@echo "Done"
 
 fclean: clean
 	$(RM) $(NAME) $(NAME).so
+	@echo "Done"
 
 re: fclean $(NAME)
+	@echo "Done"
 
 .PHONY: all clean fclean re bonus so

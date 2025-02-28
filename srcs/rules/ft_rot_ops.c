@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:30 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/27 17:26:29 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/02/28 17:30:56 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	rot_a(t_list **stackA)
 	tmp = *stackA;
 	if (!*stackA || !(*stackA)->next)
 		return ;
-	while (!tmp->next)
+	while (tmp->next)
 	{
 		tmp = tmp->next;
 	}
@@ -41,7 +41,7 @@ void	rot_b(t_list **stackB)
 	tmp = *stackB;
 	if (!*stackB || !(*stackB)->next)
 		return ;
-	while (!tmp->next)
+	while (tmp->next)
 	{
 		tmp = tmp->next;
 	}
