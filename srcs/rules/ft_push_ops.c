@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:27 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/27 17:26:14 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/01 14:31:42 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	push_a(t_list **stackA, t_list **stackB)
 {
 	t_list	*head;
 
-	if (*stackB)
-	{
-		head = (*stackB)->next;
-		*stackA = *stackB;
-		*stackB = head;
-		write(1, "pa\n", 3);
-	}
+	if (!*stackB)
+		return ;
+	head = *stackB;
+	*stackB = (*stackB)->next;
+	head->next = *stackA;
+	*stackA = head;
+	write(1, "pa\n", 3);
 }
 
 //	Takes the first element at the top of stack a
@@ -36,12 +36,12 @@ void	push_b(t_list **stackA, t_list **stackB)
 	t_list	*head;
 
 	if (*stackA)
-	{
-		head = (*stackA)->next;
-		*stackB = *stackA;
-		*stackA = head;
-		write(1, "pb\n", 3);
-	}
+		return ;
+	head = *stackA;
+	*stackA = (*stackA)->next;
+	head->next = *stackB;
+	*stackB = head;
+	write(1, "pb\n", 3);
 }
 
 // void	push_ab(t_list **stackA, t_list **stackB)

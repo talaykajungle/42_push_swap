@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:32 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/28 16:50:24 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/01 14:26:24 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	rev_rot_a(t_list **stackA)
 	tmp = *stackA;
 	if (!*stackA || !(*stackA)->next)
 		return ;
-	while (!tmp)
+	while (tmp->next->next)
 	{
 		tmp = tmp->next;
 	}
-	last = tmp;
-	tmp->next = *stackA;
+	last = tmp->next;
+	tmp->next = NULL;
 	last->next = *stackA;
 	*stackA = last;
 	write(1, "rra\n", 4);
@@ -43,12 +43,12 @@ void	rev_rot_b(t_list **stackB)
 	tmp = *stackB;
 	if (!*stackB || !(*stackB)->next)
 		return ;
-	while (!tmp)
+	while (tmp->next->next)
 	{
 		tmp = tmp->next;
 	}
-	last = tmp;
-	tmp->next = *stackB;
+	last = tmp->next;
+	tmp->next = NULL;
 	last->next = *stackB;
 	*stackB = last;
 	write(1, "rrb\n", 4);

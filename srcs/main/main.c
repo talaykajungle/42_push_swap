@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/28 16:40:04 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/01 15:32:16 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,14 @@ void	add_to_stack(t_list **stack, int data)
 	t_list	*new_node;
 
 	if (!stack)
-		return;
+		return ;
 	new_node = create_node(data);
 	if (!new_node)
-		return ;
+	{
+		free_list(stack);
+		ft_printf("Error: Memory allocation failed\n");
+		exit(1);
+	}
 	new_node->next = *stack;
 	*stack = new_node;
 }
@@ -59,6 +63,35 @@ void	free_list(t_list **head)
 	}
 }
 
+int	is_valid_input(int argc, char *argv[])
+{
+	long	num;
+	char	*str;
+
+	int i, j;
+	for (i = 1; i < argc; i++)
+	{
+		str = argv[i];
+		if (*str == '-' || *str == '+')
+			str++;
+		if (!*str)
+			return (0);
+		while (*str)
+		{
+			if (*str < '0' || *str > '9')
+				return (0);
+			str++;
+		}
+		num = atol(argv[i]);
+		if (num < INT_MIN || num > INT_MAX)
+			return (0);
+		for (j = i + 1; j < argc; j++)
+			if (atol(argv[j]) == num)
+				return (0);
+	}
+	return (1);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_list	*stack_a;
@@ -68,12 +101,12 @@ int	main(int argc, char *argv[])
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc < 2)
+	if (argc < 2 || !is_valid_input(argc, argv))
 	{
-		ft_printf("Usage: %s <numbers>\n", argv[0]);
+		ft_printf("Error: Invalid input\n");
 		return (1);
 	}
-	for (i = argc - 1; i > 0; i--)
+	for (i = 1; i < argc; i++)
 		add_to_stack(&stack_a, ft_atoi(argv[i]));
 	printf("Initial stack A: ");
 	print_stack(stack_a);
@@ -87,14 +120,12 @@ int	main(int argc, char *argv[])
 		ft_printf("Sorting not implemented for %d elements\n", argc - 1);
 	ft_printf("Sorted stack A: ");
 	print_stack(stack_a);
-	// Free stack_a using a while loop
 	while (stack_a)
 	{
 		temp = stack_a;
 		stack_a = stack_a->next;
 		free(temp);
 	}
-	// Free stack_b using a while loop
 	while (stack_b)
 	{
 		temp = stack_b;
@@ -103,4 +134,4 @@ int	main(int argc, char *argv[])
 	}
 	return (0);
 }
-//cc ./srcs/header/push_swap.h ./srcs/rules/*.c ./srcs/sorts/*.c ./srcs/main/main.c 
+// cc ./srcs/header/push_swap.h ./srcs/rules/*.c ./srcs/sorts/*.c ./srcs/main/main.c

@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/28 15:34:36 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/01 15:32:34 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ typedef struct s_list
 //	Main
 int					main(int argc, char **argv);
 void				print_stack(t_list *stack);
+t_list				*create_node(int data);
+void				add_to_stack(t_list **stack, int data);
+void				free_list(t_list **head);
+int					is_valid_input(int argc, char *argv[]);
 
 
 //	Rules
