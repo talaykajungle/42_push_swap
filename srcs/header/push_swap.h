@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/01 15:32:34 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/04 17:25:45 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ t_list				*create_node(int data);
 void				add_to_stack(t_list **stack, int data);
 void				free_list(t_list **head);
 int					is_valid_input(int argc, char *argv[]);
+void	load_stack_from_split(t_list **stack_a, char *arg);
+
 
 
 //	Rules
