@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:27 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/01 14:31:42 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/05 15:48:35 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	push_b(t_list **stackA, t_list **stackB)
 {
 	t_list	*head;
 
-	if (*stackA)
+	if (!*stackA)
 		return ;
 	head = *stackA;
 	*stackA = (*stackA)->next;

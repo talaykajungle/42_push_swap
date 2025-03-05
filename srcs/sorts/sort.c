@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:24:26 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/04 15:59:50 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/05 11:48:11 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,32 +55,6 @@ void	put_to_top(t_list **stackA, int index, int size)
 		}
 	}
 }
-
-// void	sort3(t_list **stackA)
-// {
-// 	if (sorted(*stackA))
-// 		return ;
-// 	if (minimum(*stackA) == 0)
-// 	{
-// 		swap_a(stackA);
-// 		rot_a(stackA);
-// 	}
-// 	else if (minimum(*stackA) == 1)
-// 	{
-// 		if ((*stackA)->data < (*stackA)->next->next->data)
-// 			swap_a(stackA);
-// 		else
-// 			rot_a(stackA);
-// 	}
-// 	else
-// 	{
-// 		if ((*stackA)->data < (*stackA)->next->data)
-// 			rev_rot_a(stackA);
-// 		else
-// 			swap_a(stackA);
-// 		rev_rot_a(stackA);
-// 	}
-// }
 
 void	sort3(t_list **stackA)
 {
