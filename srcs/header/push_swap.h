@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/06 12:38:24 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/06 15:40:27 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 //	struct represting a node in the linked list
 typedef struct s_list
 {
-	int				data;
+	int				data; // original number
+	int 			index; // sorted position
 	struct s_list	*next;
 }					t_list;
 
