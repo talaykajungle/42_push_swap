@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:35 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/27 17:26:37 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/06 15:18:55 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	swap_a(t_list **stackA)
 	first->next = second->next;
 	second->next = first;
 	*stackA = second;
-	write(1, "sa\n", 3);
 }
 
 //	Swaps the first 2 elements at the top of the stack b
@@ -43,14 +42,31 @@ void	swap_b(t_list **stackB)
 	first->next = second->next;
 	second->next = first;
 	*stackB = second;
-	write(1, "sb\n", 3);
 }
 
 //	Swaps the first 2 elements of both stack at the same time
 
 void	swap_ab(t_list **stackA, t_list **stackB)
 {
-	swap_a(stackA);
-	swap_b(stackB);
-	write(1, "ss\n", 3);
+	t_list	*first;
+	t_list	*second;
+	t_list	*first;
+	t_list	*second;
+
+	if (stackA && *stackA && (*stackA)->next)
+	{
+		first = *stackA;
+		second = first->next;
+		first->next = second->next;
+		second->next = first;
+		*stackA = second;
+	}
+	if (stackB && *stackB && (*stackB)->next)
+	{
+		first = *stackB;
+		second = first->next;
+		first->next = second->next;
+		second->next = first;
+		*stackB = second;
+	}
 }
