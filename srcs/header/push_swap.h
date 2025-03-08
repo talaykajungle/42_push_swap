@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/06 15:40:27 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/08 17:37:49 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 //	struct represting a node in the linked list
 typedef struct s_list
 {
-	int				data; // original number
-	int 			index; // sorted position
+	int data;  // original number
+	int index; // sorted position
 	struct s_list	*next;
 }					t_list;
 
@@ -38,9 +38,6 @@ int					is_valid_input(int argc, char *argv[]);
 void				load_stack_from_split(t_list **stack_a, char *arg);
 int					load_stack(t_list **stackA, int argc, char **argv);
 void				sort_stack(t_list **stackA, t_list **stackB, int count);
-
-
-
 
 //	Rules
 //	push ops
@@ -64,6 +61,6 @@ void				swap_ab(t_list **stackA, t_list **stackB);
 
 //	Sorts
 //	Sort checker
-
+void				assign_indicies(t_list **stackA, int length);
 
 #endif
