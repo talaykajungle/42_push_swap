@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/10 13:35:35 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/12 17:20:56 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,13 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+
 //	Main
-int					main(int argc, char **argv);
-void				print_stack(t_list *stack);
+int					main(void);
+void				print_list(t_list *stack);
+void				free_list(t_list *head);
 t_list				*create_node(int data);
-void				add_to_stack(t_list **stack, int data);
-void				free_list(t_list **head);
-int					is_valid_input(int argc, char *argv[]);
-void				load_stack_from_split(t_list **stack_a, char *arg);
-int					load_stack(t_list **stackA, int argc, char **argv);
-// void				sort_stack(t_list **stackA, t_list **stackB, int count);
+
 
 //	Rules
 //	push ops
@@ -61,6 +58,6 @@ void				swap_ab(t_list **stackA, t_list **stackB);
 
 //	Sorts
 //	Sort checker
-void				assign_indicies(t_list **stackA, int length);
+void				assign_indices(t_list **stackA, int length);
 
 #endif

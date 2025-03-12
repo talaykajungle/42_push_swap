@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 16:16:47 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/10 16:10:49 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/12 17:20:14 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 // Assign indices to stackA based on how many numbers are smaller than its data
 
-void	assign_indicies(t_list **stackA, int size)
+void	assign_indices(t_list **stackA, int size)
 {
 	t_list	*current;
 	t_list	*checker;
 	int		count;
 
-	count = 0;
 	if (!*stackA || size <= 1)
 	{
 		if (*stackA)
@@ -28,23 +27,29 @@ void	assign_indicies(t_list **stackA, int size)
 		return ;
 	}
 	current = *stackA;
-	checker = *stackA;
-	while (checker != NULL)
+	while (current != NULL)
 	{
-		if (checker->data < current->data)
-			count++;
-		checker = checker->data;
+		count = 0;
+		checker = *stackA;
+		while (checker != NULL)
+		{
+			if (checker->data < current->data)
+				count++;
+			checker = checker->next;
+		}
+		current->index = count;
+		current = current->next;
 	}
 }
 
-void	sort_small(t_list **stackA)
-{
-}
+// void	sort_small(t_list **stackA)
+// {
+// }
 
-void	sort_large(void)
-{
-}
+// void	sort_large(void)
+// {
+// }
 
-void	sort_stack(void)
-{
-}
+// void	sort_stack(void)
+// {
+// }

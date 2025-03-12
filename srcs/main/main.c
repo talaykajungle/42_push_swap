@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/05 11:42:49 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/12 17:20:21 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,102 +14,62 @@
 
 t_list	*create_node(int data)
 {
-	t_list	*new_node;
+	t_list	*node;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->data = data;
-	new_node->next = NULL;
-	return (new_node);
+	node = (t_list *)malloc(sizeof(t_list));
+	if (node)
+	{
+		node->data = data;
+		node->index = 0;
+		node->next = NULL;
+	}
+	return (node);
 }
 
-void	add_to_stack(t_list **stack, int data)
-{
-	t_list	*new_node;
-	t_list	*tmp;
-
-	if (!stack)
-		return ;
-	new_node = create_node(data);
-	if (!new_node)
-	{
-		free_list(stack);
-		ft_printf("Error: Memory allocation failed\n");
-		exit(1);
-	}
-	if (!*stack)
-		*stack = new_node;
-	else
-	{
-		tmp = *stack;
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = new_node;
-	}
-}
-
-void	free_stacks(t_list **stack_a, t_list **stack_b)
+// Print the list
+void	print_list(t_list *head)
 {
 	t_list	*temp;
 
-	while (*stack_a)
+	temp = head;
+	while (temp != NULL)
 	{
-		temp = *stack_a;
-		*stack_a = (*stack_a)->next;
-		free(temp);
+		printf("Data: %d, Index: %d\n", temp->data, temp->index);
+		temp = temp->next;
 	}
-	while (*stack_b)
+}
+
+// Free the list
+void	free_list(t_list *head)
+{
+	t_list	*current;
+	t_list	*temp;
+
+	current = head;
+	while (current != NULL)
 	{
-		temp = *stack_b;
-		*stack_b = (*stack_b)->next;
+		temp = current;
+		current = current->next;
 		free(temp);
 	}
 }
 
-int	is_valid_input(int argc, char *argv[])
+int	main(void)
 {
-	long	num;
-	char	*str;
+	// Create list: 5 -> 2 -> 8 -> 1
+	t_list *stackA = create_node(5);
+	stackA->next = create_node(2);
+	stackA->next->next = create_node(8);
+	stackA->next->next->next = create_node(1);
 
-	int i, j;
-	for (i = 1; i < argc; i++)
-	{
-		str = argv[i];
-		if (*str == '-' || *str == '+')
-			str++;
-		if (!*str)
-			return (0);
-		while (*str)
-		{
-			if (*str < '0' || *str > '9')
-				return (0);
-			str++;
-		}
-		num = atol(argv[i]);
-		if (num < INT_MIN || num > INT_MAX)
-			return (0);
-		for (j = i + 1; j < argc; j++)
-			if (atol(argv[j]) == num)
-				return (0);
-	}
-	return (1);
-}
+	// Assign indices
+	assign_indices(&stackA, 4);
 
-int	main(int argc, char *argv[])
-{
-	t_list	*stack_a;
-	t_list	*stack_b;
-	int		count;
+	// Print result
+	print_list(stackA);
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc < 2)
-		return (ft_printf("Error: Invalid input\n"), 1);
-	count = load_stack(&stack_a, argc, argv);
-	if (!count)
-		return (ft_printf("Error: Invalid input\n"), 1);
-	sort_stack(&stack_a, &stack_b, count);
-	free_stacks(&stack_a, &stack_b);
+	// Free memory
+	free_list(stackA);
+
 	return (0);
 }

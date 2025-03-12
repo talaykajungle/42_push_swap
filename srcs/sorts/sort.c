@@ -6,10 +6,10 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:24:26 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/06 12:34:31 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/12 15:05:23 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/push_swap.h"
+// #include "../header/push_swap.h"
 
 

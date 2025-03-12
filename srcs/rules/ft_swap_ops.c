@@ -6,14 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:35 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/06 15:18:55 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/12 17:07:06 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
 //	Swaps the first 2 elements at the top of the stack a
-
 void	swap_a(t_list **stackA)
 {
 	t_list	*first;
@@ -29,7 +28,6 @@ void	swap_a(t_list **stackA)
 }
 
 //	Swaps the first 2 elements at the top of the stack b
-
 void	swap_b(t_list **stackB)
 {
 	t_list	*first;
@@ -45,11 +43,8 @@ void	swap_b(t_list **stackB)
 }
 
 //	Swaps the first 2 elements of both stack at the same time
-
 void	swap_ab(t_list **stackA, t_list **stackB)
 {
-	t_list	*first;
-	t_list	*second;
 	t_list	*first;
 	t_list	*second;
 

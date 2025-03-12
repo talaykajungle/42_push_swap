@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:32 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/06 15:19:42 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/12 17:05:06 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	rev_rot_b(t_list **stackB)
 		tmp = tmp->next;
 	}
 	last = tmp->next;
-	// tmp->next = NULL;
 	last->next = *stackB;
 	last->next->next = NULL;
 	*stackB = last;
@@ -55,32 +54,39 @@ void	rev_rot_b(t_list **stackB)
 
 // Reverse rotates both stacks
 
+// void	rev_rot_ab(t_list **stackA, t_list **stackB)
+// {
+// 	t_list	*last;
+// 	t_list	*second_last;
+
+// 	if (stackA && *stackA && (*stackA)->next)
+// 	{
+// 		last = *stackA;
+// 		while (last->next)
+// 		{
+// 			second_last = last;
+// 			last = last->next;
+// 		}
+// 		second_last->next = NULL;
+// 		last->next = *stackA;
+// 		*stackA = last;
+// 	}
+// 	if (stackB && *stackB && (*stackB)->next)
+// 	{
+// 		last = *stackB;
+// 		while (last->next)
+// 		{
+// 			second_last = last;
+// 			last = last->next;
+// 		}
+// 		second_last->next = NULL;
+// 		last->next = *stackB;
+// 		*stackB = last;
+// 	}
+// }
+
 void	rev_rot_ab(t_list **stackA, t_list **stackB)
 {
-	if (stackA && *stackA && (*stackA)->next)
-	{
-		t_list *last = *stackA;
-		t_list *second_last;
-		while (last->next)
-		{
-			second_last = last;
-			last = last->next;
-		}
-		second_last->next = NULL;
-		last->next = *stackA;
-		*stackA = last;
-	}
-	if (stackB && *stackB && (*stackB)->next)
-	{
-		t_list *last = *stackB;
-		t_list *second_last;
-		while (last->next)
-		{
-			second_last = last;
-			last = last->next;
-		}
-		second_last->next = NULL;
-		last->next = *stackB;
-		*stackB = last;
-	}
+	rev_rot_a(stackA);
+	rev_rot_b(stackB);
 }

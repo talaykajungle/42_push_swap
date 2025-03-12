@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:23:58 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/06 15:17:54 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/12 17:06:14 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 // Put all write commands in here to reduce errros !
 
-void	comms(void)
-{
+// void	comms(void)
+// {
 	
-}
+// }
 
 // write(1, "sa\n", 3);
 // write(1, "sb\n", 3);

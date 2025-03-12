@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:30 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/06 15:16:51 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/12 15:09:13 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	rot_b(t_list **stackB)
 
 void	rot_ab(t_list **stackA, t_list **stackB)
 {
-	t_list	*first;
-	t_list	*last;
 	t_list	*first;
 	t_list	*last;
 
