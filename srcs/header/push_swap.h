@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/12 17:20:56 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/13 16:41:38 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_list
 	int data;  // original number
 	int index; // sorted position
 	struct s_list	*next;
-}					t_list;
+}				t_list;
 
 
 //	Main
@@ -59,5 +59,6 @@ void				swap_ab(t_list **stackA, t_list **stackB);
 //	Sorts
 //	Sort checker
 void				assign_indices(t_list **stackA, int length);
+void				sort_small(t_list **stackA, t_list **stackB, int size);
 
 #endif
