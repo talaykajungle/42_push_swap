@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/13 16:41:38 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/15 14:26:12 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int					main(void);
 void				print_list(t_list *stack);
 void				free_list(t_list *head);
 t_list				*create_node(int data);
+void				test_sort_small(int num1, int num2);
+
 
 
 //	Rules
@@ -58,7 +60,7 @@ void				swap_ab(t_list **stackA, t_list **stackB);
 
 //	Sorts
 //	Sort checker
-void				assign_indices(t_list **stackA, int length);
-void				sort_small(t_list **stackA, t_list **stackB, int size);
+void				assign_indices(t_list **stackA, int size);
+void				sort_small(t_list **stackA, int size);
 
 #endif

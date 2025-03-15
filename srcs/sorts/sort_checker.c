@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 16:16:47 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/13 16:53:12 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/15 14:25:33 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,3 @@ void	assign_indices(t_list **stackA, int size)
 		current = current->next;
 	}
 }
-
-// This function is to sort 2,3,4 or 5 numbers using simple move like (sa,ra,rra) etc.
-
-void	sort_small(t_list **stackA, t_list **stackB, int size)
-{
-	
-}
-
-// void	sort_large(void)
-// {
-// }
-
-// void	sort_stack(void)
-// {
-// }

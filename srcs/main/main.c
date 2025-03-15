@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/12 17:20:21 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/15 16:20:51 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,37 @@ void	free_list(t_list *head)
 	}
 }
 
+// void	test_sort_small(int num1, int num2)
+// {
+// 	t_list	*stackA;
+
+// 	stackA = create_node(num1);
+// 	stackA->next = create_node(num2);
+// 	assign_indices(&stackA, 2);
+// 	printf("Before sorting:\n");
+// 	print_list(stackA);
+// 	sort_small(&stackA, 2);
+// 	printf("After sorting:\n");
+// 	print_list(stackA);
+// 	free_list(stackA);
+// }
+
 int	main(void)
 {
-	// Create list: 5 -> 2 -> 8 -> 1
-	t_list *stackA = create_node(5);
-	stackA->next = create_node(2);
-	stackA->next->next = create_node(8);
-	stackA->next->next->next = create_node(1);
+	t_list *stackA = NULL;
+		// Assuming create_node allocates a node with data 5
+	//stackA->next = create_node(3);   // Second node with data 3
+	int size = 2;                    // Number of elements in the stack
 
-	// Assign indices
-	assign_indices(&stackA, 4);
+	// Call sort_small with the correct arguments
+	sort_small(&stackA, size); // Pass the address of stackA and the size
 
-	// Print result
+	// Optional: Print the list after sorting
+	printf("After sorting:\n");
 	print_list(stackA);
 
-	// Free memory
-	free_list(stackA);
+	// Clean up memory
+	free_list(stackA); // Assuming free_list is defined to free the list
 
 	return (0);
 }
