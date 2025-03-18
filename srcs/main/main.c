@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/15 16:20:51 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/18 17:00:06 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,37 +54,42 @@ void	free_list(t_list *head)
 	}
 }
 
-// void	test_sort_small(int num1, int num2)
-// {
-// 	t_list	*stackA;
-
-// 	stackA = create_node(num1);
-// 	stackA->next = create_node(num2);
-// 	assign_indices(&stackA, 2);
-// 	printf("Before sorting:\n");
-// 	print_list(stackA);
-// 	sort_small(&stackA, 2);
-// 	printf("After sorting:\n");
-// 	print_list(stackA);
-// 	free_list(stackA);
-// }
-
-int	main(void)
+void	test_sort_small(int num1, int num2)
 {
-	t_list *stackA = NULL;
-		// Assuming create_node allocates a node with data 5
-	//stackA->next = create_node(3);   // Second node with data 3
-	int size = 2;                    // Number of elements in the stack
+	t_list	*stackA;
 
-	// Call sort_small with the correct arguments
-	sort_small(&stackA, size); // Pass the address of stackA and the size
-
-	// Optional: Print the list after sorting
+	stackA = create_node(num1);
+	stackA->next = create_node(num2);
+	assign_indices(&stackA, 2);
+	printf("Before sorting:\n");
+	print_list(stackA);
+	sort_small(&stackA, 2);
 	printf("After sorting:\n");
 	print_list(stackA);
+	free_list(stackA);
+}
 
-	// Clean up memory
-	free_list(stackA); // Assuming free_list is defined to free the list
+int main(int argc, char **argv)
+{
+    t_list *stackA = NULL;
+    t_list *stackB = NULL;
+    int size;
 
-	return (0);
+    if (argc < 2)
+        return (write(2, "Error\n", 6), 1);
+
+    size = argc - 1;
+    stackA = build_stack(argv + 1, size);
+    if (!stackA)
+        return (write(2, "Error\n", 6), 1);
+
+    assign_indices(&stackA, size);
+    if (size <= 5)
+        sort_small(&stackA, &stackB);
+    // else
+    //     sort_large(&stackA, &stackB, size);
+
+    free_list(stackA);
+    free_list(stackB);
+    return (0);
 }
