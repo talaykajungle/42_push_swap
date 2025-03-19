@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:32 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/12 20:07:11 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/19 22:48:39 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,16 @@
 
 void	rev_rot_a(t_list **stackA)
 {
-	t_list	*tmp;
+	t_list	*second_last;
 	t_list	*last;
 
-	tmp = *stackA;
-	if (!*stackA || !(*stackA)->next)
+	if (!stackA || !*stackA || !(*stackA)->next)
 		return ;
-	while (tmp->next->next)
-	{
-		tmp = tmp->next;
-	}
-	last = tmp->next;
-	// tmp->next = NULL;
+	second_last = *stackA;
+	while (second_last->next->next)
+		second_last = second_last->next;
+	last = second_last->next;
+	second_last->next = NULL;
 	last->next = *stackA;
 	*stackA = last;
 }

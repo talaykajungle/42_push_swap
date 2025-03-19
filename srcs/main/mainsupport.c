@@ -6,41 +6,11 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:26:59 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/19 14:55:58 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/19 22:50:25 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
-
-// t_list	*build_stack(char **args, int size)
-// {
-// 	t_list *stack = NULL;
-// 	t_list *current = NULL;
-// 	int i = 0;
-
-// 	while (i < size)
-// 	{
-// 		int num = ft_atoi(args[i]);
-// 		if (is_duplicate(stack, num))
-// 		{
-// 			free_list(stack);
-// 			return (NULL);
-// 		}
-// 		t_list *new_node = create_node(num);
-// 		if (!new_node)
-// 		{
-// 			free_list(stack);
-// 			return (NULL);
-// 		}
-// 		if (!stack)
-// 			stack = new_node;
-// 		else
-// 			current->next = new_node;
-// 		current = new_node;
-// 		i++;
-// 	}
-// 	return (stack);
-// }
 
 t_list	*build_stack(char **args, int size)
 {

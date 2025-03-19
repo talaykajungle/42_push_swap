@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:24:26 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/19 15:13:09 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/19 22:47:27 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,11 @@ void	sort_small(t_list **stackA, int size)
 	if (first->data > second->data)
 		swap_a(stackA);
 	if (first->data > third->data)
+	{
 		rev_rot_a(stackA);
+		if (first->data > second->data)
+			swap_a(stackA);
+	}
 	if (second->data > third->data)
 		rot_a(stackA);
 }

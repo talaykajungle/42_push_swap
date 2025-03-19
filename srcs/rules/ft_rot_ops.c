@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:30 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/12 19:53:14 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/19 22:48:13 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	rot_a(t_list **stackA)
 	if (!stackA || !*stackA || !(*stackA)->next)
 		return ;
 	first = *stackA;
-	*stackA = first->next; // Move head to second node
+	*stackA = first->next;
 	last = *stackA;
-	while (last->next) // Find the last node
+	while (last->next)
 		last = last->next;
-	last->next = first; // Link last to first
+	last->next = first;
 	first->next = NULL;
 }
 

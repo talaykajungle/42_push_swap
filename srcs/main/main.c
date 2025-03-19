@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/19 11:34:08 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/19 22:54:31 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	print_list(t_list *head)
 	}
 }
 
-// Free the list
+// // Free the list
 void	free_list(t_list *head)
 {
 	t_list	*current;
@@ -54,42 +54,39 @@ void	free_list(t_list *head)
 	}
 }
 
-void	test_sort_small(int num1, int num2)
+void	test_sort_small(int a, int b, int c)
 {
 	t_list	*stackA;
 
-	stackA = create_node(num1);
-	stackA->next = create_node(num2);
-	assign_indices(&stackA, 2);
+	stackA = create_node(a);
+	stackA->next = create_node(b);
+	stackA->next->next = create_node(c);
 	printf("Before sorting:\n");
 	print_list(stackA);
-	sort_small(&stackA, 2);
+	sort_small(&stackA, 3);
 	printf("After sorting:\n");
 	print_list(stackA);
 	free_list(stackA);
 }
 
-int main(int argc, char **argv)
+int	main(void)
 {
-    t_list *stackA = NULL;
-    t_list *stackB = NULL;
-    int size;
+	printf("Test Case 1: Unsorted 2 elements\n");
+	test_sort_small(2, 1, 0); // Should sort to 1, 2, 0
 
-    if (argc < 2)
-        return (write(2, "Error\n", 6), 1);
+	printf("\nTest Case 2: Sorted 2 elements\n");
+	test_sort_small(1, 2, 0); // Should remain 1, 2, 0
 
-    size = argc - 1;
-    stackA = build_stack(argv + 1, size);
-    if (!stackA)
-        return (write(2, "Error\n", 6), 1);
+	printf("\nTest Case 3: Unsorted 3 elements\n");
+	test_sort_small(3, 1, 2); // Should sort to 1, 2, 3
 
-    assign_indices(&stackA, size);
-    if (size <= 5)
-        sort_small(&stackA, size);
-    // else
-    //     sort_large(&stackA, &stackB, size);
+	printf("\nTest Case 4: Already sorted 3 elements\n");
+	test_sort_small(1, 2, 3); // Should remain 1, 2, 3
 
-    free_list(stackA);
-    free_list(stackB);
-    return (0);
+	printf("\nTest Case 5: Reverse sorted 3 elements\n");
+	test_sort_small(3, 2, 1); // Should sort to 1, 2, 3
+
+	printf("\nTest Case 6: All elements the same\n");
+	test_sort_small(1, 1, 1); // Should remain 1, 1, 1
+	return (0);
 }

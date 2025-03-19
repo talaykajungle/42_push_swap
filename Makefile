@@ -8,7 +8,7 @@ NAME = push_swap
 CC = cc
 
 # Compiler flags
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 # Source directories
 SRCDIR = srcs
