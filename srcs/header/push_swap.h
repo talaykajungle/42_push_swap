@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/18 17:01:12 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/19 11:30:28 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ void				free_list(t_list *head);
 t_list				*create_node(int data);
 void				test_sort_small(int num1, int num2);
 
-
+// Main Support
+t_list				*build_stack(char **args, int size);
+int					is_duplicate(t_list *stack, int num);
 
 //	Rules
 //	push ops

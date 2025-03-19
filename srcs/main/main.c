@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/18 17:00:06 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/19 11:34:08 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int main(int argc, char **argv)
 
     assign_indices(&stackA, size);
     if (size <= 5)
-        sort_small(&stackA, &stackB);
+        sort_small(&stackA, size);
     // else
     //     sort_large(&stackA, &stackB, size);
 

@@ -16,6 +16,7 @@ LIBFT = ./srcs/imports/libft
 
 # Source files (list all .c files)
 SRCS = $(SRCDIR)/main/main.c \
+       $(SRCDIR)/main/mainsupport.c\
        $(SRCDIR)/rules/ft_push_ops.c \
        $(SRCDIR)/rules/ft_rev_rot_ops.c \
        $(SRCDIR)/rules/ft_rot_ops.c \
