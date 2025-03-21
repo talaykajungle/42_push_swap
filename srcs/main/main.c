@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/19 22:54:31 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/21 15:53:54 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,24 +69,13 @@ void	test_sort_small(int a, int b, int c)
 	free_list(stackA);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
+	if(argc != 4)
+	{
+		return 0;
+	}
 	printf("Test Case 1: Unsorted 2 elements\n");
-	test_sort_small(2, 1, 0); // Should sort to 1, 2, 0
-
-	printf("\nTest Case 2: Sorted 2 elements\n");
-	test_sort_small(1, 2, 0); // Should remain 1, 2, 0
-
-	printf("\nTest Case 3: Unsorted 3 elements\n");
-	test_sort_small(3, 1, 2); // Should sort to 1, 2, 3
-
-	printf("\nTest Case 4: Already sorted 3 elements\n");
-	test_sort_small(1, 2, 3); // Should remain 1, 2, 3
-
-	printf("\nTest Case 5: Reverse sorted 3 elements\n");
-	test_sort_small(3, 2, 1); // Should sort to 1, 2, 3
-
-	printf("\nTest Case 6: All elements the same\n");
-	test_sort_small(1, 1, 1); // Should remain 1, 1, 1
+	test_sort_small(ft_atoi(argv[1]),ft_atoi(argv[2]), ft_atoi(argv[3])); // Should sort to 1, 2, 0
 	return (0);
 }

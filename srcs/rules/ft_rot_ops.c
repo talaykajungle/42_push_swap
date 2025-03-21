@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:30 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/19 22:48:13 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/21 16:34:53 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	rot_a(t_list **stackA)
 		last = last->next;
 	last->next = first;
 	first->next = NULL;
+	ft_putendl_fd("ra", 1);
+	return(0);
 }
 
 //	Shifts up all elements of stack a by 1.
@@ -48,6 +50,7 @@ void	rot_b(t_list **stackB)
 		last = last->next;
 	last->next = first;
 	first->next = NULL;
+	write(1, "rb\n", 3);
 }
 
 // Shifts(rotates) ra & rb at the same time
