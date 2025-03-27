@@ -1,4 +1,5 @@
 MAKEFLAGS += --silent
+.SILENT: $(OBJS) $(NAME) $(LIBFT_A)
 
 # Name of the executable
 NAME = push_swap
@@ -7,7 +8,7 @@ NAME = push_swap
 CC = cc
 
 # Compiler flags
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 # Source directories
 SRCDIR = srcs
@@ -15,6 +16,7 @@ LIBFT = ./srcs/imports/libft
 
 # Source files (list all .c files)
 SRCS = $(SRCDIR)/main/main.c \
+       $(SRCDIR)/main/mainsupport.c\
        $(SRCDIR)/rules/ft_push_ops.c \
        $(SRCDIR)/rules/ft_rev_rot_ops.c \
        $(SRCDIR)/rules/ft_rot_ops.c \
@@ -33,8 +35,12 @@ all: $(NAME)
 
 # Rule to create the executable
 $(NAME): $(OBJS) $(LIBFT_A)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
 	@echo "Done"
+
+# Explicit rule for .o files
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Build libft
 $(LIBFT_A):
@@ -45,13 +51,13 @@ $(LIBFT_A):
 clean:
 	rm -f $(OBJS)
 	$(MAKE) -C $(LIBFT) clean
-	@echo "Done"
+	@echo "clean"
 
 # Fclean rule
 fclean: clean
 	rm -f $(NAME)
 	$(MAKE) -C $(LIBFT) fclean
-	@echo "Done"
+	@echo "fclean"
 
 # Rebuild everything
 re: fclean all

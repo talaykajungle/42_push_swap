@@ -1,4 +1,5 @@
 MAKEFLAGS += --silent
+.SILENT: $(OBJS) $(NAME) $(LIBFT_A)
 
 # Variables
 SRCS =  ft_printf.c ft_printf_utils.c ft_pointer.c ft_puthex.c
@@ -22,24 +23,19 @@ makelibft:
 
 # Rule to compile object files
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-	@echo "Done"
-
-# # Rule to create the library
-# $(NAME): makelibft $(OBJS)
-# 	ar rcs $(NAME) $(OBJS)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean rule
 clean:
 	rm -f $(OBJS)
 	cd $(LIBFTDIR) && make clean
-	@echo "Done"
+	@echo "clean"
 
 # fclean rule
 fclean: clean
 	rm -f $(NAME)
 	cd $(LIBFTDIR) && make fclean
-	@echo "Done"
+	@echo "fclean"
 
 # Rebuild rule
 re: fclean $(NAME)

@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:30 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/28 17:30:56 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/21 16:34:53 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,20 @@
 
 void	rot_a(t_list **stackA)
 {
-	t_list	*tmp;
+	t_list	*first;
+	t_list	*last;
 
-	tmp = *stackA;
-	if (!*stackA || !(*stackA)->next)
+	if (!stackA || !*stackA || !(*stackA)->next)
 		return ;
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-	}
-	tmp->next = *stackA;
-	*stackA = (*stackA)->next;
-	write(1, "ra\n", 3);
+	first = *stackA;
+	*stackA = first->next;
+	last = *stackA;
+	while (last->next)
+		last = last->next;
+	last->next = first;
+	first->next = NULL;
+	ft_putendl_fd("ra", 1);
+	return(0);
 }
 
 //	Shifts up all elements of stack a by 1.
@@ -36,17 +38,18 @@ void	rot_a(t_list **stackA)
 
 void	rot_b(t_list **stackB)
 {
-	t_list	*tmp;
+	t_list	*first;
+	t_list	*last;
 
-	tmp = *stackB;
-	if (!*stackB || !(*stackB)->next)
+	if (!stackB || !*stackB || !(*stackB)->next)
 		return ;
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-	}
-	tmp->next = *stackB;
-	*stackB = (*stackB)->next;
+	first = *stackB;
+	*stackB = first->next;
+	last = *stackB;
+	while (last->next)
+		last = last->next;
+	last->next = first;
+	first->next = NULL;
 	write(1, "rb\n", 3);
 }
 
@@ -54,7 +57,27 @@ void	rot_b(t_list **stackB)
 
 void	rot_ab(t_list **stackA, t_list **stackB)
 {
-	rot_a(stackA);
-	rot_b(stackB);
-	write(1, "rr\n", 3);
+	t_list	*first;
+	t_list	*last;
+
+	if (stackA && *stackA && (*stackA)->next)
+	{
+		first = *stackA;
+		*stackA = first->next;
+		last = *stackA;
+		while (last->next)
+			last = last->next;
+		last->next = first;
+		first->next = NULL;
+	}
+	if (stackB && *stackB && (*stackB)->next)
+	{
+		first = *stackB;
+		*stackB = first->next;
+		last = *stackB;
+		while (last->next)
+			last = last->next;
+		last->next = first;
+		first->next = NULL;
+	}
 }

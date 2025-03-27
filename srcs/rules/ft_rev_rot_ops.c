@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:32 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/02/28 16:50:24 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/03/19 22:48:39 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,18 @@
 
 void	rev_rot_a(t_list **stackA)
 {
-	t_list	*tmp;
+	t_list	*second_last;
 	t_list	*last;
 
-	tmp = *stackA;
-	if (!*stackA || !(*stackA)->next)
+	if (!stackA || !*stackA || !(*stackA)->next)
 		return ;
-	while (!tmp)
-	{
-		tmp = tmp->next;
-	}
-	last = tmp;
-	tmp->next = *stackA;
+	second_last = *stackA;
+	while (second_last->next->next)
+		second_last = second_last->next;
+	last = second_last->next;
+	second_last->next = NULL;
 	last->next = *stackA;
 	*stackA = last;
-	write(1, "rra\n", 4);
 }
 
 //	Shifts down all elements of stack b by 1
@@ -43,22 +40,51 @@ void	rev_rot_b(t_list **stackB)
 	tmp = *stackB;
 	if (!*stackB || !(*stackB)->next)
 		return ;
-	while (!tmp)
+	while (tmp->next->next)
 	{
 		tmp = tmp->next;
 	}
-	last = tmp;
-	tmp->next = *stackB;
+	last = tmp->next;
 	last->next = *stackB;
+	last->next->next = NULL;
 	*stackB = last;
-	write(1, "rrb\n", 4);
 }
 
 // Reverse rotates both stacks
+
+// void	rev_rot_ab(t_list **stackA, t_list **stackB)
+// {
+// 	t_list	*last;
+// 	t_list	*second_last;
+
+// 	if (stackA && *stackA && (*stackA)->next)
+// 	{
+// 		last = *stackA;
+// 		while (last->next)
+// 		{
+// 			second_last = last;
+// 			last = last->next;
+// 		}
+// 		second_last->next = NULL;
+// 		last->next = *stackA;
+// 		*stackA = last;
+// 	}
+// 	if (stackB && *stackB && (*stackB)->next)
+// 	{
+// 		last = *stackB;
+// 		while (last->next)
+// 		{
+// 			second_last = last;
+// 			last = last->next;
+// 		}
+// 		second_last->next = NULL;
+// 		last->next = *stackB;
+// 		*stackB = last;
+// 	}
+// }
 
 void	rev_rot_ab(t_list **stackA, t_list **stackB)
 {
 	rev_rot_a(stackA);
 	rev_rot_b(stackB);
-	write(1, "rrr\n", 4);
 }
