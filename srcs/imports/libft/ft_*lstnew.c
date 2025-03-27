@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_ops.c                                      :+:      :+:    :+:   */
+/*   ft_*lstnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 14:30:35 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/27 17:15:27 by codespace        ###   ########.fr       */
+/*   Created: 2025/03/27 20:58:04 by codespace         #+#    #+#             */
+/*   Updated: 2025/03/27 22:36:03 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/push_swap.h"
+#include "libft.h"
 
-//	Swaps the first 2 elements at the top of the stack a
-
-int	swap(t_list **stackA)
+t_list_libft    *ft_lstnew(int data)
 {
-	t_list *head;
-	t_list *next;
-	int	tmp_dat;
-	int	tmp_index;
+    t_list_libft *new;
 
-	
+    new = (t_list_libft *)malloc(sizeof(*new));
+    if(!new)
+        return (NULL);
+        new->data = data;
+        new->index = -1;
+        new->next = NULL;
+        return (new);
 }
