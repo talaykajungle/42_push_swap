@@ -6,13 +6,14 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:24:26 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/21 15:50:22 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/07 15:25:07 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-// This function is to sort 2,3,4 or 5 numbers using simple move like (sa,ra,rra) etc.
+// This function is to sort 2,3,4 or 5
+// numbers using simple move like (sa,ra,rra) etc.
 
 // void	sort_small(t_list **stackA, int size)
 // {
@@ -57,7 +58,7 @@ void	sort_small(t_list **stackA, int size)
 	if (size == 2 || size == 3)
 	{
 		if (first->data > second->data && second->data > third->data)
-		{	
+		{
 			swap_a(stackA);
 			rev_rot_a(stackA);
 		}

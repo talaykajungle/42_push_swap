@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/27 22:38:48 by codespace        ###   ########.fr       */
+/*   Updated: 2025/04/07 15:20:02 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 # include <ctype.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <stdarg.h>
+# include <stdbool.h>
 # include <stddef.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <stdarg.h>
-# include <stdbool.h>
-# include <stdint.h>
 
 typedef struct s_list_libft
 {
@@ -80,7 +80,7 @@ t_list_libft		*ft_lstnew(int data);
 void				printlist(t_list_libft *head);
 int					ft_lstsize(t_list_libft *head);
 void				ft_lstadd_back(t_list_libft **stack, t_list_libft *new);
-t_list_libft	    *ft_lstlast(t_list_libft *head);
-t_list_libft    	*ft_lstadd_front(t_list_libft **stack, t_list_libft *new);
+t_list_libft		*ft_lstlast(t_list_libft *head);
+t_list_libft		*ft_lstadd_front(t_list_libft **stack, t_list_libft *new);
 
 #endif

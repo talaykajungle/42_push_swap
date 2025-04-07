@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 14:39:46 by tamutlu           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/03/22 21:43:44 by codespace        ###   ########.fr       */
-=======
-/*   Updated: 2025/03/21 15:53:54 by tamutlu          ###   ########.fr       */
->>>>>>> 95b655a505abce0183dfc65b09db94d51ec6b342
+/*   Created: 2025/04/07 15:15:33 by tamutlu           #+#    #+#             */
+/*   Updated: 2025/04/07 15:23:16 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +71,12 @@ void	test_sort_small(int a, int b, int c)
 
 int	main(int argc, char **argv)
 {
-	if(argc != 4)
+	if (argc != 4)
 	{
-		return 0;
+		return (0);
 	}
 	printf("Test Case 1: Unsorted 2 elements\n");
-	test_sort_small(ft_atoi(argv[1]),ft_atoi(argv[2]), ft_atoi(argv[3])); // Should sort to 1, 2, 0
+	test_sort_small(ft_atoi(argv[1]), ft_atoi(argv[2]), ft_atoi(argv[3]));
+		// Should sort to 1, 2, 0
 	return (0);
 }
