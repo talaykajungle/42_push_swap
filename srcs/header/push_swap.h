@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/12 22:13:22 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/12 23:57:13 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,9 @@ int					is_duplicate(t_list *stack, int num);
 
 //	Rules
 //	push ops
-void				push_a(t_list **stackA, t_list **stackB);
-void				push_b(t_list **stackA, t_list **stackB);
+int					push(t_list **stack_to, t_list **stack_from);
+int					pa(t_list **stack_a, t_list **stack_b);
+int					pb(t_list **stack_a, t_list **stack_b);
 
 //	rot ops
 int					reverse(t_list **stackA);

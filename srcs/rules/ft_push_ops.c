@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:27 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/12 23:54:50 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/12 23:55:59 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 //Remove from Source:	Store top,update stack_from head | 		stack_from loses top element
 //Add to Destination: 	If stack_to empty:set as head; else link|stack_to gains new top element
 //Return: 				Indicate success 					|	Function ends with 0
-	int
-	push(t_list **stack_to, t_list **stack_from)
+int	push(t_list **stack_to, t_list **stack_from)
 {
 	t_list *tmp;       // Temporary storage for the element being moved
 	t_list *head_to;   // points to the head of stack_to
