@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:32 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/19 22:48:39 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/12 22:11:48 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,77 +14,54 @@
 
 //	Shifts down all elements of stack a by 1
 
-void	rev_rot_a(t_list **stackA)
+int	reverse(t_list **stackA)
 {
-	t_list	*second_last;
-	t_list	*last;
+	t_list	*head;
+	t_list	*tail;
 
-	if (!stackA || !*stackA || !(*stackA)->next)
-		return ;
-	second_last = *stackA;
-	while (second_last->next->next)
-		second_last = second_last->next;
-	last = second_last->next;
-	second_last->next = NULL;
-	last->next = *stackA;
-	*stackA = last;
-}
-
-//	Shifts down all elements of stack b by 1
-
-void	rev_rot_b(t_list **stackB)
-{
-	t_list	*tmp;
-	t_list	*last;
-
-	tmp = *stackB;
-	if (!*stackB || !(*stackB)->next)
-		return ;
-	while (tmp->next->next)
+	// Calls to count the number of node in a list
+	if (ft_lstsize(*stackA) < 2)
+		return (-1);
+	// Sets "head" to point to first node of the list
+	head = *stackA;
+	tail = ft_lstlast(head);
+	//	Traverses the list to find the second-to-last-node
+	while (head)
 	{
-		tmp = tmp->next;
+		if (head->next->next == NULL)
+		{
+			head->next = NULL;
+			break ;
+		}
+		head = head->next;
 	}
-	last = tmp->next;
-	last->next = *stackB;
-	last->next->next = NULL;
-	*stackB = last;
+	//	Sets the next pointer to the last node (tail) to current head list
+	tail->next = *stackA;
+	*stackA = tail;
+	return (0);
+	// Indicates the rotation was successful
 }
 
-// Reverse rotates both stacks
-
-// void	rev_rot_ab(t_list **stackA, t_list **stackB)
-// {
-// 	t_list	*last;
-// 	t_list	*second_last;
-
-// 	if (stackA && *stackA && (*stackA)->next)
-// 	{
-// 		last = *stackA;
-// 		while (last->next)
-// 		{
-// 			second_last = last;
-// 			last = last->next;
-// 		}
-// 		second_last->next = NULL;
-// 		last->next = *stackA;
-// 		*stackA = last;
-// 	}
-// 	if (stackB && *stackB && (*stackB)->next)
-// 	{
-// 		last = *stackB;
-// 		while (last->next)
-// 		{
-// 			second_last = last;
-// 			last = last->next;
-// 		}
-// 		second_last->next = NULL;
-// 		last->next = *stackB;
-// 		*stackB = last;
-// 	}
-// }
-
-void	rev_rot_ab(t_list **stackA, t_list **stackB)
+int	rra(t_list **stackA)
 {
-	rev_rot_a(stackA);
-	rev_rot_b(stackB);
+	if (reverse(stackA) == -1)
+		return (-1);
+	ft_putendl_fd("rra", 1);
+	return (0);
+}
+int	rrb(t_list **stackB)
+{
+	if (reverse(stackB) == -1)
+		return (-1);
+	ft_putendl_fd("rrb", 1);
+	return (0);
+}
+int	rrr(t_list **stackA, t_list **stackB)
+{
+	if ((ft_lstsize(*stackA) < 2) || (ft_lstsize(*stackB) < 2))
+		return (-1);
+	reverse(stackA);
+	reverse(*stackB);
+	ft_putendl_fd("rrr", 1);
+	return (0);
 }
