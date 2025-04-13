@@ -15,14 +15,16 @@ SRCDIR = srcs
 LIBFT = ./srcs/imports/libft
 
 # Source files (list all .c files)
-SRCS = $(SRCDIR)/main/main.c \
-       $(SRCDIR)/main/mainsupport.c\
-       $(SRCDIR)/rules/ft_push_ops.c \
-       $(SRCDIR)/rules/ft_rev_rot_ops.c \
-       $(SRCDIR)/rules/ft_rot_ops.c \
-       $(SRCDIR)/rules/ft_swap_ops.c \
-       $(SRCDIR)/sorts/sort_checker.c \
-       $(SRCDIR)/sorts/sort.c
+SRCS =	$(SRCDIR)/main/main.c \
+		$(SRCDIR)/main/mainsupport.c\
+		$(SRCDIR)/rules/ft_push_ops.c \
+		$(SRCDIR)/rules/ft_rev_rot_ops.c \
+		$(SRCDIR)/rules/ft_rot_ops.c \
+		$(SRCDIR)/rules/ft_swap_ops.c \
+		$(SRCDIR)/rules/list_rules1.c \
+		$(SRCDIR)/rules/list_rules2.c \
+		$(SRCDIR)/sorts/sort_checker.c \
+		$(SRCDIR)/sorts/sort.c
 
 OBJS = $(SRCS:.c=.o)
 

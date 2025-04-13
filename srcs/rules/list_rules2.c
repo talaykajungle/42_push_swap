@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_lists0.c                                         :+:      :+:    :+:   */
+/*   list_rules2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 22:34:37 by codespace         #+#    #+#             */
-/*   Updated: 2025/04/07 15:22:51 by tamutlu          ###   ########.fr       */
+/*   Created: 2025/04/13 19:01:57 by tamutlu           #+#    #+#             */
+/*   Updated: 2025/04/13 19:27:01 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/push_swap.h"
 
-t_list_libft	*ft_lstnew(int data)
+// Prints the linked list
+int	printlist(t_list *head)
 {
-	t_list_libft	*new;
+	t_list *tmp;
 
-	new = (t_list_libft *)malloc(sizeof(*new));
-	if (!new)
-		return (NULL);
-	new->data = data;
-	new->index = -1;
-	new->next = NULL;
-	return (new);
+	tmp = head;
+	while (tmp != NULL)
+	{
+		ft_putnbr_fd(tmp->data, 2);
+		ft_putendl_fd("\n", 1);
+		tmp = tmp->next;
+	}
+	return 0;
 }

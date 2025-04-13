@@ -6,76 +6,42 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:24:26 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/07 15:25:07 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/13 19:49:48 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-// This function is to sort 2,3,4 or 5
-// numbers using simple move like (sa,ra,rra) etc.
+/*
+1 2 3	nothing already sorted	!"done"!
+1 3 2	reverse rot a			!"done"!
+2 1 3	swap a					!"done"!
+2 3 1	swap & rotate			!"done"!
+3 1 2	rotate a				!""!
+3 2 1	swap & reverse rotate	!""!
 
-// void	sort_small(t_list **stackA, int size)
-// {
-// 	t_list	*first;
-// 	t_list	*second;
-
-// 	if (size < 2 || *stackA == NULL || (*stackA)->next == NULL)
-// 		return ;
-// 	first = *stackA;
-// 	second = first->next;
-// 	first = *stackA;
-// 	second = first->next;
-// 	if (first->data > second->data)
-// 		swap_a(stackA);
-// }
-
-// void	sort_3(t_list **stackA, int size)
-// {
-// 	t_list	*first;
-// 	t_list	*second;
-// 	t_list	*third;
-
-// 	if (size == 3)
-// 	{
-// 		first = *stackA;
-// 		second = first->next;
-// 		third = second->next;
-// 	}
-// }
-
+bigger ">" smaller "<"
+*/
 void	sort_small(t_list **stackA, int size)
 {
-	t_list	*first;
-	t_list	*second;
-	t_list	*third;
-
-	if (size < 2 || *stackA == NULL)
+	if (size < 2 ||*stackA == NULL) // When it is already sorted
 		return ;
-	first = *stackA;
-	second = first->next;
-	third = second->next;
-	if (size == 2 || size == 3)
+	if (size == 2)
 	{
-		if (first->data > second->data && second->data > third->data)
-		{
-			swap_a(stackA);
-			rev_rot_a(stackA);
-		}
-		return ;
+		if ((*stackA)->data > (*stackA)->next->data) // swap a
+			sa(stackA);
 	}
-	if (first->data > second->data)
-		swap_a(stackA);
-	if (first->data > third->data)
+	else if(size == 3)
+		rra(stackA); // reverse rot a
+	if ((*stackA)->data < (*stackA)->next->data)
+		sa(stackA); // swap
+	else
+		ra(stackA); // rotate
+	if ((*stackA)->data > (*stackA)->next->data)
+		ra(stackA);
+	if ((*stackA)->data > (*stackA)->next->data)
 	{
-		rev_rot_a(stackA);
-		if (first->data > second->data)
-			swap_a(stackA);
+		sa(stackA);
+		ra(stackA);
 	}
-	if (second->data > third->data)
-		rot_a(stackA);
 }
-
-// void	sort_stack(void)
-// {
-// }

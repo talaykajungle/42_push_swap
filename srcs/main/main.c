@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:15:33 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/07 15:23:16 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/13 19:38:41 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,6 @@ int	main(int argc, char **argv)
 	}
 	printf("Test Case 1: Unsorted 2 elements\n");
 	test_sort_small(ft_atoi(argv[1]), ft_atoi(argv[2]), ft_atoi(argv[3]));
-		// Should sort to 1, 2, 0
+	// Should sort to 1, 2, 0
 	return (0);
 }

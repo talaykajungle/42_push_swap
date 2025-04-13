@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:32 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/12 22:11:48 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/13 18:32:11 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	rrr(t_list **stackA, t_list **stackB)
 	if ((ft_lstsize(*stackA) < 2) || (ft_lstsize(*stackB) < 2))
 		return (-1);
 	reverse(stackA);
-	reverse(*stackB);
+	reverse(stackB);
 	ft_putendl_fd("rrr", 1);
 	return (0);
 }

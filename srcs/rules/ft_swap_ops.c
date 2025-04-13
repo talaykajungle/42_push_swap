@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 18:00:29 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/07 18:39:54 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/13 19:12:24 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 //	Swaps the first 2 elements at the top of the stack a
 int	swap(t_list **stackA)
 {
-	t_list_libft	*head;
-	t_list_libft	*next;
+	t_list	*head;
+	t_list	*next;
 	int		tmp_val;
 	int		tmp_index;
 
-	if (ft_lstsize((*stackA) < 2))
+	if (ft_lstsize((*stackA)) < 2)
 		return (-1);
 	head = *stackA;
 	next = head->next;

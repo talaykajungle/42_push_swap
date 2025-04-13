@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/07 15:20:02 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/13 19:09:09 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@
 # include <string.h>
 # include <unistd.h>
 
-typedef struct s_list_libft
-{
-	void			*data;
-	void			*index;
-	struct s_list	*next;
-}					t_list_libft;
+// typedef struct s_list_lib
+// {
+// 	int				data;
+// 	int				index;
+// 	struct s_list	*next;
+// }					t_list_lib;
 
 size_t				ft_strlen(const char *s);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -76,11 +76,11 @@ void				ft_unsigned(unsigned int a, int *len);
 void				ft_pointer(uintptr_t ptr, int *len);
 void				ft_handle_format(va_list *args, char c, int *len);
 int					ft_printf(const char *format, ...);
-t_list_libft		*ft_lstnew(int data);
-void				printlist(t_list_libft *head);
-int					ft_lstsize(t_list_libft *head);
-void				ft_lstadd_back(t_list_libft **stack, t_list_libft *new);
-t_list_libft		*ft_lstlast(t_list_libft *head);
-t_list_libft		*ft_lstadd_front(t_list_libft **stack, t_list_libft *new);
+// t_list_lib			*ft_lstnew(int data);
+// int					printlist(t_list_lib *head);
+// int					ft_lstsize(t_list_lib *head);
+// int					ft_lstadd_back(t_list_lib **stack, t_list_lib *new);
+// t_list_lib			*ft_lstlast(t_list_lib *head);
+// t_list_lib			*ft_lstadd_front(t_list_lib **stack, t_list_lib *new);
 
 #endif
