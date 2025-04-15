@@ -6,13 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:26:59 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/07 15:19:34 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/15 20:54:32 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-t_list	*build_stack(char **args, int size)
+t_list	*build_stack(char **argc,char **argv,int size)
 {
 	t_list	*stack;
 	t_list	*current;

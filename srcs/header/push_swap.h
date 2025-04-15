@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/13 19:37:53 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/15 20:48:05 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ typedef struct s_list
 
 //	Main
 // int					main(int argc, char **argv);
-int							main(int argc, char **argv);
+int							main();
 void						print_list(t_list *stack);
 void						free_list(t_list *head);
 t_list						*create_node(int data);
-void						test_sort_small(int a, int b, int c);
+//void						test_sort_small(int a, int b, int c);
+static void						sort_stack(t_list **stackA);
 // void				test_swap_a(void);
 
 // Main Support
@@ -69,7 +70,8 @@ int							ss(t_list **stackA, t_list **stackB);
 //	Sort checker
 void						assign_indices(t_list **stackA, int size);
 void						sort_small(t_list **stackA, int size);
-void						sort_3(t_list **stackA, int size);
+int							is_sorted(t_list **stack);
+void						simple_sort(t_list **stackA);
 
 // list rules
 t_list						*ft_lstnew(int data);

@@ -23,7 +23,7 @@ makelibft:
 
 # Rule to compile object files
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@CC $(CFLAGS) -c $< -o $@
 
 # Clean rule
 clean:

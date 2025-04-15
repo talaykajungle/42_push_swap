@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 18:57:37 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/13 19:25:13 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/15 19:24:05 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	ft_lstadd_back(t_list **stack, t_list *new)
 // Returns the size of the linked list
 int	ft_lstsize(t_list *head)
 {
-	size_t		i;
+	int		i;
 	t_list	*tmp;
 
 	tmp = head;

@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:15:33 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/13 19:38:41 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/15 20:56:10 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,29 +54,33 @@ void	free_list(t_list *head)
 	}
 }
 
-void	test_sort_small(int a, int b, int c)
+static void	sort_stack(t_list **stackA)
 {
-	t_list	*stackA;
-
-	stackA = create_node(a);
-	stackA->next = create_node(b);
-	stackA->next->next = create_node(c);
-	printf("Before sorting:\n");
-	print_list(stackA);
-	sort_small(&stackA, 3);
-	printf("After sorting:\n");
-	print_list(stackA);
-	free_list(stackA);
+	if (ft_lstsize(*stackA) <= 5)
+		simple_sort(stackA);
 }
 
 int	main(int argc, char **argv)
 {
-	if (argc != 4)
+	t_list	**stackA;
+	t_list	**stackB;
+
+	if (argc < 2)
 	{
 		return (0);
 	}
-	printf("Test Case 1: Unsorted 2 elements\n");
-	test_sort_small(ft_atoi(argv[1]), ft_atoi(argv[2]), ft_atoi(argv[3]));
+	stackA = (t_list **)malloc(sizeof(t_list));
+	stackB = (t_list **)malloc(sizeof(t_list));
+	*stackA = NULL;
+	*stackB = NULL;
+	build_stack(**stackA, argc);
+	if(is_sorted(*stackA))
+	{
+		free_list(*stackA);
+		free_list(*stackB);
+	}
+	
+	sort_stack(0);
 	// Should sort to 1, 2, 0
 	return (0);
 }

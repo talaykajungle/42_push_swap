@@ -1,5 +1,6 @@
 MAKEFLAGS += --silent
-.SILENT: $(OBJS) $(NAME) $(LIBFT_A)
+libft.a: $(OBJ)
+#.SILENT: $(OBJS) $(NAME) $(LIBFT_A)
 
 NAME = libft.a
 
@@ -23,7 +24,7 @@ all: $(NAME)
 	@echo "Done"
 
 $(NAME): $(OBJS)
-	@ar $(ARFLAGS) $(NAME) $(OBJS)
+	@ar $(ARFLAGS) $(NAME) $(OBJS) >/dev/null 2>&1
 	@echo "Done"
 
 so: $(OBJS) $(OBJS_BONUS)

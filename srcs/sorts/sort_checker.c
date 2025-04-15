@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 16:16:47 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/03/15 14:25:33 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/15 20:17:31 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,18 @@ void	assign_indices(t_list **stackA, int size)
 		current->index = count;
 		current = current->next;
 	}
+}
+
+int	is_sorted(t_list **stack)
+{
+	t_list	*head;
+
+	head = *stack;
+	while (head && head->next)
+	{
+		if (head->data > head->next->data)
+			return (0);
+		head = head->next;
+	}
+	return (1);
 }
