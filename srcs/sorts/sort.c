@@ -6,84 +6,75 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:24:26 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/15 20:41:39 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/16 23:39:31 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-// void	sort_small(t_list **stackA, int size)
-// {
-// 	if (size < 2 || *stackA == NULL) // When it is already sorted
-// 		return ;
-// 	if ((*stackA)->data > (*stackA)->next->data) // swap a
-// 		sa(stackA);
-// 	if (size == 3)
-// 	{
-// 		rra(stackA); // reverse rot a
-// 	}
-// 	else
-// 		ra(stackA); // rotate
-// 	if ((*stackA)->data > (*stackA)->next->data)
-// 		ra(stackA);
-// 	if ((*stackA)->data > (*stackA)->next->data)
-// 	{
-// 		sa(stackA);
-// 		ra(stackA);
-// 	}
-// }
-
-/*
-1 2 3	nothing already sorted	!"done"!
-1 3 2	reverse rot a			!"done"!
-2 1 3	swap a					!"done"!
-2 3 1	swap & rotate			!"done"!
-3 1 2	rotate a				!""!
-3 2 1	swap & reverse rotate	!""!
-
-bigger ">" smaller "<"
-*/
-
 void	sort_small(t_list **stackA, int size)
 {
-	if (size < 2 || *stackA == NULL)
+	if (size < 2 || !*stackA || is_sorted(stackA))
 		return ;
+	assign_indices(stackA, size);
 	if (size == 2)
 	{
-		if ((*stackA)->data >= (*stackA)->next->data)
+		if ((*stackA)->index > (*stackA)->next->index)
 			sa(stackA);
 		return ;
 	}
-	if (size == 3)
-	{
+	if ((*stackA)->index == 2) // Largest at top
+		ra(stackA);
+	else if ((*stackA)->next->index == 2) // Largest in middle
+		rra(stackA);
+	if ((*stackA)->index > (*stackA)->next->index) // Sort top two
 		sa(stackA);
-		rra(stackA); // reverse rot a
+}
+void	push_smallest(t_list **stackA, t_list **stackB, int target_index)
+{
+	int		pos;
+	int		size;
+	t_list	*current;
+
+	pos = 0;
+	size = ft_lstsize(*stackA);
+	current = *stackA;
+	while (current && current->index != target_index)
+	{
+		pos++;
+		current = current->next;
 	}
+	if (pos <= size / 2)
+		while (pos-- > 0)
+			ra(stackA);
 	else
-		ra(stackA); // rotate
-	if ((*stackA)->data > (*stackA)->next->data)
-		ra(stackA);
-	if ((*stackA)->data > (*stackA)->next->data)
-	{
-		sa(stackA);
-		ra(stackA);
-	}
+		for (int i = 0; i < size - pos; i++)
+			rra(stackA);
+	pb(stackA, stackB);
+}
+
+void	sort_five(t_list **stackA, t_list **stackB)
+{
+	assign_indices(stackA, 5);
+	push_smallest(stackA, stackB, 0);
+	push_smallest(stackA, stackB, 1);
+	sort_small(stackA, 3);
+	if((*stackA)->index < (*stackB)->next->index)
+		sa(stackB);
+	pa(stackA, stackB);
 }
 
 void	simple_sort(t_list **stackA)
 {
-	int size;
+	int		size;
+	t_list	*stackB;
 
-	if (is_sorted(stackA) || ft_lstsize(*stackA) == 0
-		|| ft_lstsize(*stackA) == 1)
-		return ;
 	size = ft_lstsize(*stackA);
-	if (size == 2)
-		sa(stackA);
-	// else if (size == 3)
-	// 	sort_small(stackA, size);
-	// else if (size == 4)
-	// 	sort_4(*stackA, stackB);
-	// else if (size == 5)
-	// 	sort_5(*stackA, stackB);
+	stackB = NULL;
+	if (is_sorted(stackA) || size <= 1)
+		return ;
+	if (size <= 3)
+		sort_small(stackA, size);
+	else if (size <= 5)
+		sort_five(stackA, &stackB);
 }

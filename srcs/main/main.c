@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:15:33 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/15 20:56:10 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/16 23:38:54 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_list(t_list *head)
 }
 
 // // Free the list
-void	free_list(t_list *head)
+void	free_list(t_list *head, t_list *head2)
 {
 	t_list	*current;
 	t_list	*temp;
@@ -52,35 +52,45 @@ void	free_list(t_list *head)
 		current = current->next;
 		free(temp);
 	}
+	if (head2 == NULL)
+		return ;
+	current = head2;
+	while (current != NULL)
+	{
+		temp = current;
+		current = current->next;
+		free(temp);
+	}
 }
 
-static void	sort_stack(t_list **stackA)
+void	sort_stack(t_list **stackA)
 {
 	if (ft_lstsize(*stackA) <= 5)
 		simple_sort(stackA);
+	// else
+	// 	radix();
 }
 
 int	main(int argc, char **argv)
 {
-	t_list	**stackA;
-	t_list	**stackB;
+	t_list	*stacka;
+	t_list	*stackb;
 
 	if (argc < 2)
-	{
 		return (0);
-	}
-	stackA = (t_list **)malloc(sizeof(t_list));
-	stackB = (t_list **)malloc(sizeof(t_list));
-	*stackA = NULL;
-	*stackB = NULL;
-	build_stack(**stackA, argc);
-	if(is_sorted(*stackA))
+	stacka = NULL;
+	stackb = NULL;
+	stacka = build_stack(argv + 1, argc - 1);
+	if (!stacka)
 	{
-		free_list(*stackA);
-		free_list(*stackB);
+		ft_putstr_fd("Error\n", 2);
+		return (free_list(stacka, stackb), 1);
 	}
-	
-	sort_stack(0);
-	// Should sort to 1, 2, 0
+	if (is_sorted(&stacka))
+	{
+		return (free_list(stacka, stackb), 0);
+	}
+	sort_stack(&stacka);
+	free_list(stacka, stackb);
 	return (0);
 }
