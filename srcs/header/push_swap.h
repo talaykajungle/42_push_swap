@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/16 23:39:11 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/17 19:35:50 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@ typedef struct s_list
 }							t_list;
 
 //	Main
-// int					main(int argc, char **argv);
-int							main();
+int					main(int argc, char **argv);
+//int							main();
 void						print_list(t_list *stack);
 void						free_list(t_list *head, t_list *head2);
 t_list						*create_node(int data);
 void						sort_stack(t_list **stackA);
+// void						radix(t_list **stackA, t_list **stackB, int size);
+// static int						max_bits(t_list **stack);
 
 // Main Support
 t_list						*build_stack(char **args, int size);
