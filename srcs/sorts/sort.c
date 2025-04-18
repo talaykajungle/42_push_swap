@@ -6,11 +6,30 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:24:26 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/16 23:39:31 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/18 21:42:25 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
+
+// void	sort_small(t_list **stackA, int size)
+// {
+// 	if (size < 2 || !*stackA || is_sorted(stackA))
+// 		return ;
+// 	assign_indices(stackA, size);
+// 	if (size == 2)
+// 	{
+// 		if ((*stackA)->index > (*stackA)->next->index)
+// 			sa(stackA);
+// 		return ;
+// 	}
+// 	if ((*stackA)->index == 2) // Largest at top
+// 		ra(stackA);
+// 	else if ((*stackA)->next->index == 2) // Largest in middle
+// 		rra(stackA);
+// 	if ((*stackA)->index > (*stackA)->next->index) // Sort top two
+// 		sa(stackA);
+// }
 
 void	sort_small(t_list **stackA, int size)
 {
@@ -19,17 +38,18 @@ void	sort_small(t_list **stackA, int size)
 	assign_indices(stackA, size);
 	if (size == 2)
 	{
-		if ((*stackA)->index > (*stackA)->next->index)
+		if ((*stackA)->data > (*stackA)->next->data)
 			sa(stackA);
 		return ;
 	}
-	if ((*stackA)->index == 2) // Largest at top
+	if ((*stackA)->index == 2)
 		ra(stackA);
-	else if ((*stackA)->next->index == 2) // Largest in middle
+	else if ((*stackA)->next->index == 2)
 		rra(stackA);
-	if ((*stackA)->index > (*stackA)->next->index) // Sort top two
+	if ((*stackA)->data > (*stackA)->next->data)
 		sa(stackA);
 }
+
 void	push_smallest(t_list **stackA, t_list **stackB, int target_index)
 {
 	int		pos;
@@ -59,7 +79,7 @@ void	sort_five(t_list **stackA, t_list **stackB)
 	push_smallest(stackA, stackB, 0);
 	push_smallest(stackA, stackB, 1);
 	sort_small(stackA, 3);
-	if((*stackA)->index < (*stackB)->next->index)
+	if ((*stackA)->index < (*stackB)->next->index)
 		sa(stackB);
 	pa(stackA, stackB);
 }

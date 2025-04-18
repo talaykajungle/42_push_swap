@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:26:59 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/17 19:55:51 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/18 21:40:05 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ t_list	*build_stack(char **args, int size)
 	stack = NULL;
 	current = NULL;
 	i = 0;
-	num = 0;
 	if (!args || size <= 0)
 		return (NULL);
 	while (i < size)
@@ -51,7 +50,6 @@ t_list	*build_stack(char **args, int size)
 	}
 	return (stack);
 }
-
 
 int	is_duplicate(t_list *stack, int num)
 {

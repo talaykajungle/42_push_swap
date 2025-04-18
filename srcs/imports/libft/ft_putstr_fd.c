@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:56:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/07 18:56:40 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/18 21:23:34 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	write(fd, s, ft_strlen(s));
+	while (*s)
+		write(fd, s++, 1);
 }

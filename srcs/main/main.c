@@ -6,91 +6,67 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:15:33 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/16 23:38:54 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/18 22:00:13 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-t_list	*create_node(int data)
+static char	**get_args(int argc, char **argv, int *size)
 {
-	t_list	*node;
+	char	**args;
+	int		i;
 
-	node = (t_list *)malloc(sizeof(t_list));
-	if (node)
+	if (argc == 2)
 	{
-		node->data = data;
-		node->index = 0;
-		node->next = NULL;
+		args = ft_split(argv[1], ' ');
+		if (!args)
+			return (NULL);
+		i = 0;
+		while (args[i])
+			i++;
+		*size = i;
 	}
-	return (node);
+	else
+	{
+		args = argv + 1;
+		*size = argc - 1;
+	}
+	return (args);
 }
 
-// Print the list
-void	print_list(t_list *head)
+static void	free_args(int argc, char **args)
 {
-	t_list	*temp;
+	int	i;
 
-	temp = head;
-	while (temp != NULL)
-	{
-		printf("Data: %d, Index: %d\n", temp->data, temp->index);
-		temp = temp->next;
-	}
-}
-
-// // Free the list
-void	free_list(t_list *head, t_list *head2)
-{
-	t_list	*current;
-	t_list	*temp;
-
-	current = head;
-	while (current != NULL)
-	{
-		temp = current;
-		current = current->next;
-		free(temp);
-	}
-	if (head2 == NULL)
+	if (argc != 2 || !args)
 		return ;
-	current = head2;
-	while (current != NULL)
-	{
-		temp = current;
-		current = current->next;
-		free(temp);
-	}
-}
-
-void	sort_stack(t_list **stackA)
-{
-	if (ft_lstsize(*stackA) <= 5)
-		simple_sort(stackA);
-	// else
-	// 	radix();
+	i = 0;
+	while (args[i])
+		free(args[i++]);
+	free(args);
 }
 
 int	main(int argc, char **argv)
 {
 	t_list	*stacka;
 	t_list	*stackb;
+	char	**args;
+	int		size;
 
-	if (argc < 2)
-		return (0);
 	stacka = NULL;
 	stackb = NULL;
-	stacka = build_stack(argv + 1, argc - 1);
+	if (argc < 2)
+		return (0);
+	args = get_args(argc, argv, &size);
+	if (!args || size == 0)
+		return (ft_putstr_fd("Error\n", 2), free_args(argc, args), 1);
+	stacka = build_stack(args, size);
+	free_args(argc, args);
 	if (!stacka)
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (free_list(stacka, stackb), 1);
-	}
+		return (ft_putstr_fd("Error\n", 2), free_list(stacka, stackb), 1);
 	if (is_sorted(&stacka))
-	{
 		return (free_list(stacka, stackb), 0);
-	}
 	sort_stack(&stacka);
-	free_list(stacka, stackb);
-	return (0);
+	return (free_list(stacka, stackb), 0);
 }

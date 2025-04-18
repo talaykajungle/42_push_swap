@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:49 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/07 15:21:30 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/18 21:53:20 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ char	*ft_strdup(const char *s)
 	return (new);
 }
 
-int	main(int ac, char **av)
-{
-	char	*mine;
-	char	*theirs;
+// int	main(int ac, char **av)
+// {
+// 	char	*mine;
+// 	char	*theirs;
 
-	if (ac == 2)
-	{
-		mine = ft_strdup(av[1]);
-		theirs = strdup(av[1]);
-		printf(":%s:\n:%s:\n", mine, theirs);
-	}
-	return (0);
-}
+// 	if (ac == 2)
+// 	{
+// 		mine = ft_strdup(av[1]);
+// 		theirs = strdup(av[1]);
+// 		printf(":%s:\n:%s:\n", mine, theirs);
+// 	}
+// 	return (0);
+// }
