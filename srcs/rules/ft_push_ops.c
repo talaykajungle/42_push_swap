@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_ops.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: talaykajungle <talaykajungle@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:30:27 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/16 20:42:29 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/21 19:01:04 by talaykajung      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-int	push(t_list **stack_to, t_list **stack_from)
+int	push(t_list **stackA, t_list **stackB)
 {
 	t_list	*tmp;
 	t_list	*head_to;
 	t_list	*head_from;
 
-	if (ft_lstsize(*stack_from) == 0)
+	if (ft_lstsize(*stackB) == 0)
 		return (-1);
-	head_to = *stack_to;
-	head_from = *stack_from;
+	head_to = *stackA;
+	head_from = *stackB;
 	tmp = head_from;
 	head_from = head_from->next;
-	*stack_from = head_from;
+	*stackB = head_from;
 	if (!head_to)
 	{
 		head_to = tmp;
 		head_to->next = NULL;
-		*stack_to = head_to;
+		*stackA = head_to;
 	}
 	else
 	{
 		tmp->next = head_to;
-		*stack_to = tmp;
+		*stackA = tmp;
 	}
 	return (0);
 }

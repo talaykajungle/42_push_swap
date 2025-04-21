@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: talaykajungle <talaykajungle@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/18 22:10:11 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/21 19:31:39 by talaykajung      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void						assign_indices(t_list **stackA, int size);
 void						sort_small(t_list **stackA, int size);
 int							is_sorted(t_list **stack);
 void						simple_sort(t_list **stackA);
-void					push_smallest(t_list **stackA, t_list **stackB, int target_index);
+void						push_smallest(t_list **stackA, t_list **stackB, int target_index);
 void						sort_five(t_list **stackA, t_list **stackB);
 
 // list rules

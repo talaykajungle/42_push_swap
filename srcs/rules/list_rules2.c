@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_rules2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: talaykajungle <talaykajungle@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 19:01:57 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/18 22:05:45 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/21 19:42:29 by talaykajung      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,19 +81,16 @@ void	free_list(t_list *head, t_list *head2)
 void	sort_stack(t_list **stackA)
 {
 	int	size;
-
-	// t_list	*stackB;
+	t_list	*stackB;
+	
 	size = ft_lstsize(*stackA);
-	ft_putstr_fd("sort_stack: size = ", 2);
-	ft_putnbr_fd(size, 2);
-	ft_putendl_fd("", 2);
+	stackB = NULL;
+	assign_indices(stackA, size);
 	if (size <= 5)
 		simple_sort(stackA);
-	// else
-	// {
-	// 	ft_putstr_fd("sort_stack: calling radix_sort\n", 2);
-	// 	radix_sort(stackA);
-	// }
-	// ft_putstr_fd("sort_stack: final stack = ", 2);
-	// print_list(*stackA);
+	else
+	{
+		ft_putstr_fd("sort_stack: calling radix\n", 2);
+		radix(stackA, &stackB);
+	}
 }

@@ -1,0 +1,493 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Mon Apr 21 18:32:49 2025
+ 
+
+# Variables
+
+# environment
+LC_ALL = C
+# environment
+PULSE_SERVER = unix:/mnt/wslg/PulseServer
+# environment
+WSLENV = ELECTRON_RUN_AS_NODE/w:WT_SESSION:WT_PROFILE_ID:
+# environment
+VSCODE_CWD = /mnt/c/Users/Talaykajungle/AppData/Local/Programs/Microsoft VS Code
+# default
+MAKE_COMMAND := make
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# makefile (from 'Makefile', line 33)
+LIBFT_A = $(LIBFT)/libft.a
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /mnt/d/CProgramming/42_push_swap/42_push_swap
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# makefile (from 'Makefile', line 15)
+LIBFT = ./srcs/imports/libft
+# environment
+LANG = C
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# makefile
+MAKEFLAGS = pqrRs
+# makefile
+CURDIR := /mnt/d/CProgramming/42_push_swap/42_push_swap
+# makefile (from 'Makefile', line 18)
+SRCS = $(SRCDIR)/main/main.c $(SRCDIR)/main/mainsupport.c $(SRCDIR)/main/radix.c $(SRCDIR)/rules/ft_push_ops.c $(SRCDIR)/rules/ft_rev_rot_ops.c $(SRCDIR)/rules/ft_rot_ops.c $(SRCDIR)/rules/ft_swap_ops.c $(SRCDIR)/rules/list_rules1.c $(SRCDIR)/rules/list_rules2.c $(SRCDIR)/sorts/sort_checker.c $(SRCDIR)/sorts/sort.c
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrRs
+# default
+.SHELLFLAGS := -c
+# environment
+WSL2_GUI_APPS_ENABLED = 1
+# environment
+WAYLAND_DISPLAY = wayland-0
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+WT_PROFILE_ID = {51855cb2-8cce-5362-8f54-464b92b32386}
+# automatic
+*F = $(notdir $*)
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/talaykajungle/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/out/nls.messages.json","locale":"en","availableLanguages":{}}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 30)
+OBJS = $(SRCS:.c=.o)
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /home/talaykajungle/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Intel/WiFi/bin/:/mnt/c/Program Files/Common Files/Intel/WirelessCommon/:/mnt/c/Program Files (x86)/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/Talaykajungle/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Talaykajungle/.dotnet/tools:/mnt/c/Program Files/Intel/WiFi/bin/:/mnt/c/Program Files/Common Files/Intel/WirelessCommon/:/mnt/c/Users/Talaykajungle/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Talaykajungle/AppData/Roaming/npm:/mnt/c/Users/Talaykajungle/AppData/Local/Microsoft/WinGet/Links:/snap/bin
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+WT_SESSION = d3068051-7b0d-435c-92d5-beba029254b4
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# automatic
+?F = $(notdir $?)
+# makefile (from 'Makefile', line 5)
+NAME = push_swap
+# environment
+HOSTTYPE = x86_64
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+# automatic
++F = $(notdir $+)
+# environment
+WSL_INTEROP = /run/WSL/5930_interop
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = talaykajungle
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Talaykajungle/.vscode/extensions/ms-vscode-remote.remote-wsl-0.99.0
+# makefile
+.DEFAULT_GOAL := all
+# environment
+DISPLAY = :0
+# environment
+USER = talaykajungle
+# default
+MAKE_VERSION := 4.3
+# environment
+_ = /mnt/c/Users/Talaykajungle/AppData/Local/Programs/Microsoft VS Code/bin/code
+# environment
+XDG_RUNTIME_DIR = /run/user/1000/
+# makefile (from 'Makefile', line 11)
+CFLAGS = -Wall -Wextra -Werror -g
+# environment
+VSCODE_IPC_HOOK_CLI = /run/user/1000/vscode-ipc-ecf7136d-c4ac-4ef6-b3a9-a070210f16bf.sock
+# environment
+HOME = /home/talaykajungle
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TERM = xterm-256color
+# makefile (from 'Makefile', line 14)
+SRCDIR = srcs
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+WSL_DISTRO_NAME = Ubuntu
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 8)
+CC = cc
+# environment
+VSCODE_ESM_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# variable set hash-table stats:
+# Load=77/1024=8%, Rehash=0, Collisions=1/139=1%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# srcs/main (device 85, inode 3659174697403424): 7 files, no impossibilities so far.
+# srcs/rules (device 85, inode 3096224743982124): 13 files, no impossibilities so far.
+# srcs/sorts (device 85, inode 3096224743982134): 4 files, no impossibilities so far.
+# . (device 85, inode 1407374883553884): 9 files, no impossibilities.
+
+# 33 files, no impossibilities in 4 directories.
+
+# Implicit Rules
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
+# Files
+
+# Not a target:
+srcs/rules/ft_rot_ops.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1337278
+#  File has been updated.
+#  Successfully updated.
+
+srcs/imports/libft/libft.a:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 50):
+	@$(MAKE) -C $(LIBFT)
+	@echo "Done"
+
+# Not a target:
+srcs/rules/ft_push_ops.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1267285
+#  File has been updated.
+#  Successfully updated.
+
+srcs/main/mainsupport.o: srcs/main/mainsupport.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/main/mainsupport'
+#  Last modified 2025-04-21 18:32:38.1255871
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+srcs/rules/ft_swap_ops.o: srcs/rules/ft_swap_ops.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/rules/ft_swap_ops'
+#  Last modified 2025-04-21 18:32:38.4753569
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:31:36.1409534
+#  File has been updated.
+#  Successfully updated.
+
+srcs/sorts/sort.o: srcs/sorts/sort.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/sorts/sort'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := srcs/sorts/sort.o
+# automatic
+# * := srcs/sorts/sort
+# automatic
+# < := srcs/sorts/sort.c
+# automatic
+# + := srcs/sorts/sort.c
+# automatic
+# % := 
+# automatic
+# ^ := srcs/sorts/sort.c
+# automatic
+# ? := srcs/sorts/sort.c
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+# Not a target:
+srcs/rules/list_rules2.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1437321
+#  File has been updated.
+#  Successfully updated.
+
+.SILENT: Code
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 55):
+	rm -f $(OBJS)
+	$(MAKE) -C $(LIBFT) clean
+	@echo "clean"
+
+# Not a target:
+srcs/sorts/sort.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:31:07.1119255
+#  File has been updated.
+#  Successfully updated.
+
+ 
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 67):
+	@echo "Done"
+
+# Not a target:
+srcs/main/radix.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1207287
+#  File has been updated.
+#  Successfully updated.
+
+srcs/main/main.o: srcs/main/main.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/main/main'
+#  Last modified 2025-04-21 18:32:38.0580277
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+# Not a target:
+srcs/main/mainsupport.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1177296
+#  File has been updated.
+#  Successfully updated.
+
+srcs/rules/ft_rev_rot_ops.o: srcs/rules/ft_rev_rot_ops.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/rules/ft_rev_rot_ops'
+#  Last modified 2025-04-21 18:32:38.3312386
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+# Not a target:
+srcs/rules/ft_rev_rot_ops.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1307297
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/rules/list_rules1.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1407276
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: push_swap
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'Makefile', line 37):
+	@echo "Done"
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 61):
+	rm -f $(NAME)
+	$(MAKE) -C $(LIBFT) fclean
+	@echo "fclean"
+
+# Not a target:
+srcs/main/main.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1137306
+#  File has been updated.
+#  Successfully updated.
+
+push_swap: srcs/main/main.o srcs/main/mainsupport.o srcs/main/radix.o srcs/rules/ft_push_ops.o srcs/rules/ft_rev_rot_ops.o srcs/rules/ft_rot_ops.o srcs/rules/ft_swap_ops.o srcs/rules/list_rules1.o srcs/rules/list_rules2.o srcs/sorts/sort_checker.o srcs/sorts/sort.o srcs/imports/libft/libft.a
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'Makefile', line 41):
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
+	@echo "Done"
+
+srcs/rules/ft_push_ops.o: srcs/rules/ft_push_ops.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/rules/ft_push_ops'
+#  Last modified 2025-04-21 18:32:38.263201
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+srcs/sorts/sort_checker.o: srcs/sorts/sort_checker.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/sorts/sort_checker'
+#  Last modified 2025-04-21 18:32:38.6961994
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+srcs/rules/list_rules1.o: srcs/rules/list_rules1.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/rules/list_rules1'
+#  Last modified 2025-04-21 18:32:38.5523977
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+# Not a target:
+srcs/sorts/sort_checker.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1547276
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Code:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+srcs/main/radix.o: srcs/main/radix.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/main/radix'
+#  Last modified 2025-04-21 18:32:38.1931631
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+srcs/rules/ft_rot_ops.o: srcs/rules/ft_rot_ops.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/rules/ft_rot_ops'
+#  Last modified 2025-04-21 18:32:38.3987543
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+.PHONY: all clean fclean re srcs/imports/libft/libft.a
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/rules/ft_swap_ops.c:
+#  Implicit rule search has been done.
+#  Last modified 2025-04-21 18:23:50.1377274
+#  File has been updated.
+#  Successfully updated.
+
+srcs/rules/list_rules2.o: srcs/rules/list_rules2.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'srcs/rules/list_rules2'
+#  Last modified 2025-04-21 18:32:38.6221317
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+# files hash-table stats:
+# Load=34/1024=3%, Rehash=0, Collisions=0/102=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 78 / storage = 1229 B / avg = 15 B
+# current buf: size = 8162 B / used = 1229 B / count = 78 / avg = 15 B
+
+# strcache performance: lookups = 118 / hit rate = 33%
+# hash-table stats:
+# Load=78/8192=1%, Rehash=0, Collisions=0/118=0%
+# Finished Make data base on Mon Apr 21 18:32:49 2025
+
+ 
