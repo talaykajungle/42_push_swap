@@ -6,13 +6,12 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 18:00:29 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/13 19:12:24 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/22 16:36:51 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-//	Swaps the first 2 elements at the top of the stack a
 int	swap(t_list **stackA)
 {
 	t_list	*head;
@@ -32,6 +31,7 @@ int	swap(t_list **stackA)
 	next->index = tmp_index;
 	return (0);
 }
+
 int	sa(t_list **stackA)
 {
 	if (swap(stackA) == -1)
@@ -39,6 +39,7 @@ int	sa(t_list **stackA)
 	ft_putendl_fd("sa", 1);
 	return (0);
 }
+
 int	sb(t_list **stackB)
 {
 	if (swap(stackB) == -1)
@@ -46,6 +47,7 @@ int	sb(t_list **stackB)
 	ft_putendl_fd("sb", 1);
 	return (0);
 }
+
 int	ss(t_list **stackA, t_list **stackB)
 {
 	if ((ft_lstsize(*stackA) < 2) || (ft_lstsize(*stackB) < 2))

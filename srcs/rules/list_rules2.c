@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   list_rules2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: talaykajungle <talaykajungle@student.42    +#+  +:+       +#+        */
+/*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 19:01:57 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/21 19:42:29 by talaykajung      ###   ########.fr       */
+/*   Updated: 2025/04/22 16:38:46 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-// Prints the linked list
 int	printlist(t_list *head)
 {
 	t_list	*tmp;
@@ -41,7 +40,6 @@ t_list	*create_node(int data)
 	return (node);
 }
 
-// Print the list
 void	print_list(t_list *head)
 {
 	t_list	*temp;
@@ -54,7 +52,6 @@ void	print_list(t_list *head)
 	}
 }
 
-// // Free the list
 void	free_list(t_list *head, t_list *head2)
 {
 	t_list	*current;
@@ -80,17 +77,14 @@ void	free_list(t_list *head, t_list *head2)
 
 void	sort_stack(t_list **stackA)
 {
-	int	size;
-	t_list	*stackB;
-	
+	int		size;
+	t_list	*stackb;
+
 	size = ft_lstsize(*stackA);
-	stackB = NULL;
+	stackb = NULL;
 	assign_indices(stackA, size);
 	if (size <= 5)
 		simple_sort(stackA);
 	else
-	{
-		ft_putstr_fd("sort_stack: calling radix\n", 2);
-		radix(stackA, &stackB);
-	}
+		radix(stackA, &stackb);
 }

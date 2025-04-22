@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: talaykajungle <talaykajungle@student.42    +#+  +:+       +#+        */
+/*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 16:16:47 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/21 18:59:43 by talaykajung      ###   ########.fr       */
+/*   Created: 2025/04/22 16:30:26 by tamutlu           #+#    #+#             */
+/*   Updated: 2025/04/22 16:30:38 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 18:57:37 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/15 19:24:05 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/04/22 16:45:48 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,16 @@ t_list	*ft_lstnew(int data)
 	new->next = NULL;
 	return (new);
 }
-// Adds the specified node to the list (Makes the head of the node)
+
 t_list	*ft_lstadd_front(t_list **stack, t_list *new)
 {
-	if(!stack || !new)
-		return NULL;
+	if (!stack || !new)
+		return (NULL);
 	new->next = *stack;
 	*stack = new;
 	return (new);
 }
 
-// Returns the last Node of the list
 t_list	*ft_lstlast(t_list *head)
 {
 	t_list	*tmp;
@@ -49,7 +48,6 @@ t_list	*ft_lstlast(t_list *head)
 	return (tmp);
 }
 
-// Adds the specified node to the Stack (Making it the last node)
 int	ft_lstadd_back(t_list **stack, t_list *new)
 {
 	t_list	*n;
@@ -65,10 +63,9 @@ int	ft_lstadd_back(t_list **stack, t_list *new)
 		*stack = new;
 		(*stack)->next = NULL;
 	}
-	return 0;
+	return (0);
 }
 
-// Returns the size of the linked list
 int	ft_lstsize(t_list *head)
 {
 	int		i;

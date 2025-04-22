@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: talaykajungle <talaykajungle@student.42    +#+  +:+       +#+        */
+/*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 17:24:26 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/21 18:43:46 by talaykajung      ###   ########.fr       */
+/*   Created: 2025/04/22 16:30:18 by tamutlu           #+#    #+#             */
+/*   Updated: 2025/04/22 16:43:16 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,27 @@ void	push_smallest(t_list **stackA, t_list **stackB, int target_index)
 {
 	int		pos;
 	int		size;
+	int		i;
 	t_list	*current;
 
 	pos = 0;
 	size = ft_lstsize(*stackA);
 	current = *stackA;
 	while (current && current->index != target_index)
-	{
 		pos++;
-		current = current->next;
-	}
+	current = current->next;
 	if (pos <= size / 2)
 		while (pos-- > 0)
 			ra(stackA);
 	else
-		for (int i = 0; i < size - pos; i++)
+	{
+		i = 0;
+		while (i < size - pos)
+		{
 			rra(stackA);
+			i++;
+		}
+	}
 	pb(stackA, stackB);
 }
 
@@ -69,18 +74,18 @@ void	sort_five(t_list **stackA, t_list **stackB)
 void	simple_sort(t_list **stackA)
 {
 	int		size;
-	t_list	*stackB;
+	t_list	*stackb;
 
 	size = ft_lstsize(*stackA);
-	stackB = NULL;
+	stackb = NULL;
 	if (is_sorted(stackA) || size <= 1)
 		return ;
 	if (size <= 3)
 		sort_small(stackA, size);
 	else if (size <= 5)
-		sort_five(stackA, &stackB);
+		sort_five(stackA, &stackb);
 	else
 	{
-		radix(stackA, &stackB);
+		radix(stackA, &stackb);
 	}
 }
