@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 19:22:04 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/22 16:35:47 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/20 17:55:25 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void				free_list(t_list *head, t_list *head2);
 t_list				*create_node(int data);
 void				sort_stack(t_list **stackA);
 void				radix(t_list **stackA, t_list **stackB);
+void				free_args(int argc, char **args);
+void				arg_check(int argc, char **argv);
 
 // Main Support
 t_list				*build_stack(char **args, int size);

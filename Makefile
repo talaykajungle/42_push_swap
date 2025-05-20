@@ -18,6 +18,7 @@ LIBFT = ./srcs/imports/libft
 SRCS =	$(SRCDIR)/main/main.c \
 		$(SRCDIR)/main/mainsupport.c\
 		$(SRCDIR)/main/radix.c \
+		$(SRCDIR)/main/arg_check.c \
 		$(SRCDIR)/rules/ft_push_ops.c \
 		$(SRCDIR)/rules/ft_rev_rot_ops.c \
 		$(SRCDIR)/rules/ft_rot_ops.c \

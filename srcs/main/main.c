@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:15:33 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/22 13:01:13 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/20 19:01:21 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	**get_args(int argc, char **argv, int *size)
 	return (args);
 }
 
-static void	free_args(int argc, char **args)
+void	free_args(int argc, char **args)
 {
 	int	i;
 
@@ -56,8 +56,9 @@ int	main(int argc, char **argv)
 
 	stacka = NULL;
 	stackb = NULL;
-	if (argc < 2)
+	if (argc < 1)
 		return (0);
+	arg_check(argc, argv);
 	args = get_args(argc, argv, &size);
 	if (!args || size == 0)
 		return (ft_putstr_fd("Error\n", 2), free_args(argc, args), 1);
