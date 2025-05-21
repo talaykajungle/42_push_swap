@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:20:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/05/21 15:42:59 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/21 17:53:22 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Checks if the given string contains only numbers
 Skips the minus sign if it encounters one
 Returns 1 if the string is a valid number, 0 if not
 */
+
 static int	num_check(char *n)
 {
 	int	indx;
@@ -63,12 +64,19 @@ Function checks for duplicate values within the given parameters.
 If a duplicate is found, the proper error message is displayed and the
 program exits.
 */
+
 static int	dup_check(char **args, long temp, int indx)
 {
+	int		error;
+	long	val;
+
 	indx++;
 	while (args[indx])
 	{
-		if (ft_atoi(args[indx]) == temp)
+		val = ft_atoi(args[indx], &error);
+		if (error)
+			return (1);
+		if (val == temp)
 			return (1);
 		indx++;
 	}
@@ -87,25 +95,24 @@ Outputs Error and Exits if any validation fails
 void	arg_check(int argc, char **argv)
 {
 	int		indx;
+	int		error;
 	long	temp;
 	char	**args;
 
 	indx = 0;
+	args = argv;
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
-	{
 		indx = 1;
-		args = argv;
-	}
 	while (args[indx])
 	{
 		if (!num_check(args[indx]))
 			ft_error("Error: Arguments contain character(s)", argc, args);
-		temp = ft_atoi(args[indx]);
+		temp = ft_atoi(args[indx], &error);
 		if (dup_check(args, temp, indx))
 			ft_error("Error: Parameters contain duplicates", argc, args);
-		if (temp < -2147483648 || temp > 2147483647)
+		if (temp < INT_MIN || temp > INT_MAX)
 			ft_error("Error: Integer value parameters exceeded", argc, args);
 		indx++;
 	}

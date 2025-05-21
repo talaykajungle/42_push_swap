@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:30:18 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/05/20 19:00:51 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/21 17:31:53 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void	push_smallest(t_list **stackA, t_list **stackB, int target_index)
 	size = ft_lstsize(*stackA);
 	current = *stackA;
 	while (current && current->index != target_index)
-{	
+	{
 		pos++;
 		current = current->next;
-}
+	}
 	if (pos <= size / 2)
 		while (pos-- > 0)
 			ra(stackA);

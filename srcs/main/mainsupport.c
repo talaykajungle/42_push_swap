@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:26:59 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/05/20 17:59:58 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/21 17:31:04 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,37 @@ t_list	*add_node(t_list **stack, t_list **current, int num)
 	return (*stack);
 }
 
+// t_list	*build_stack(char **args, int size)
+// {
+// 	t_list	*stack;
+// 	t_list	*current;
+// 	int		i;
+// 	int		num;
+
+// 	stack = NULL;
+// 	current = NULL;
+// 	i = 0;
+// 	if (!args || size <= 0)
+// 		return (NULL);
+// 	while (i < size)
+// 	{
+// 		num = ft_atoi(args[i], &error);
+// 		if (is_duplicate(stack, num))
+// 			return (free_list(stack, NULL), NULL);
+// 		if (!add_node(&stack, &current, num))
+// 			return (NULL);
+// 		i++;
+// 	}
+// 	return (stack);
+// }
+
 t_list	*build_stack(char **args, int size)
 {
 	t_list	*stack;
 	t_list	*current;
 	int		i;
 	int		num;
+	int		error;
 
 	stack = NULL;
 	current = NULL;
@@ -41,11 +66,13 @@ t_list	*build_stack(char **args, int size)
 		return (NULL);
 	while (i < size)
 	{
-		num = ft_atoi(args[i]);
+		num = ft_atoi(args[i], &error);
+		if (error)
+			return (free_list(stack, NULL), NULL);
 		if (is_duplicate(stack, num))
 			return (free_list(stack, NULL), NULL);
 		if (!add_node(&stack, &current, num))
-			return (NULL);
+			return (free_list(stack, NULL), NULL);
 		i++;
 	}
 	return (stack);

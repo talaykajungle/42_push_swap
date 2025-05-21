@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/04/13 19:09:09 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/21 16:41:13 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_itoa(int n);
-int					ft_atoi(const char *str);
+int					ft_atoi(const char *str, int *error);
 char				*ft_strjoin(char const *s1, char const *s2);
 void				ft_putchar(char c, int *len);
 void				ft_putstr(char *s, int *len);
@@ -76,6 +76,7 @@ void				ft_unsigned(unsigned int a, int *len);
 void				ft_pointer(uintptr_t ptr, int *len);
 void				ft_handle_format(va_list *args, char c, int *len);
 int					ft_printf(const char *format, ...);
+int					ft_isspace(int c);
 // t_list_lib			*ft_lstnew(int data);
 // int					printlist(t_list_lib *head);
 // int					ft_lstsize(t_list_lib *head);
