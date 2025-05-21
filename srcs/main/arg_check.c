@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:20:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/05/20 18:46:54 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/21 15:42:59 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	arg_check(int argc, char **argv)
 		if (dup_check(args, temp, indx))
 			ft_error("Error: Parameters contain duplicates", argc, args);
 		if (temp < -2147483648 || temp > 2147483647)
-			ft_error("Error: Integer value paramaters exceeded", argc, args);
+			ft_error("Error: Integer value parameters exceeded", argc, args);
 		indx++;
 	}
 	if (argc == 2)
