@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:10 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/05/21 17:35:31 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/21 20:26:00 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 // 	return ((int)res * sign);
 // }
 
-int	ft_atoi(const char *str, int *error)
+long	ft_atoi(const char *str, int *error)
 {
 	long	res;
 	int		sign;
@@ -52,13 +52,15 @@ int	ft_atoi(const char *str, int *error)
 		str++;
 	if (!ft_isdigit(*str))
 		*error = 1;
-	while (ft_isdigit(*str) && !*error)
-	{
+	while (ft_isdigit(*str))
 		res = res * 10 + (*str++ - '0');
-		if (res > INT_MAX || - res < INT_MIN)
-			*error = 1;
-	}
 	if (*str && !*error)
 		*error = 1;
-	return ((int)(res * sign));
+	res *= sign;
+	if (res > INT_MAX || res < INT_MIN)
+	{
+		*error = 1;
+		return (1);
+	}
+	return (res);
 }

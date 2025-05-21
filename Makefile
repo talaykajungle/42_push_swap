@@ -63,6 +63,9 @@ fclean: clean
 	$(MAKE) -C $(LIBFT) fclean
 	@echo "fclean"
 
+valgrind: $(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) $(ARGS)
+
 # Rebuild everything
 re: fclean all
 	@echo "Done"
