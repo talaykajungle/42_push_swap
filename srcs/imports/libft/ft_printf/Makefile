@@ -14,12 +14,12 @@ CFLAGS = -Wall -Wextra -Werror -Iincludes -I$(LIBFTDIR)
 
 # Default target
 all: $(NAME)
-	@echo "Done"
+	# @echo "Done"
 
 makelibft:
 	make -C $(LIBFTDIR)
 	cp $(LIBFTDIR)/$(LIBFTNAME) $(NAME)
-	@echo "Done"
+	# @echo "Done"
 
 # Rule to compile object files
 %.o: %.c
@@ -29,16 +29,16 @@ makelibft:
 clean:
 	rm -f $(OBJS)
 	cd $(LIBFTDIR) && make clean
-	@echo "clean"
+	# @echo "clean"
 
 # fclean rule
 fclean: clean
 	rm -f $(NAME)
 	cd $(LIBFTDIR) && make fclean
-	@echo "fclean"
+	# @echo "fclean"
 
 # Rebuild rule
 re: fclean $(NAME)
-	@echo "Done"
+	# @echo "Done"
 
 .PHONY: all clean fclean re

@@ -2,7 +2,6 @@ MAKEFLAGS += --silent
 .SILENT: $(OBJS) $(NAME) $(LIBFT_A)
 
 # Name of the executable
-NAME = push_swap
 
 # Compiler
 CC = cc
@@ -29,18 +28,18 @@ SRCS =	$(SRCDIR)/main/main.c \
 		$(SRCDIR)/sorts/sort.c
 
 OBJS = $(SRCS:.c=.o)
-
-# Library files
+NAME = push_swap
 LIBFT_A = $(LIBFT)/libft.a
+
 
 # Default target
 all: $(NAME)
-	@echo "Done"
+	@echo "push_swap: nothing to be done for (all)"
 
 # Rule to create the executable
 $(NAME): $(OBJS) $(LIBFT_A)
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT_A) -o $(NAME)
-	@echo "Done"
+	@echo "Push_swap made - Done"
 
 # Explicit rule for .o files
 %.o: %.c
@@ -49,25 +48,25 @@ $(NAME): $(OBJS) $(LIBFT_A)
 # Build libft
 $(LIBFT_A):
 	@$(MAKE) -C $(LIBFT)
-	@echo "Done"
+	@echo "Libft - Done"
 
 # Clean rule
 clean:
 	rm -f $(OBJS)
 	$(MAKE) -C $(LIBFT) clean
-	@echo "clean"
+	# @echo "clean"
 
 # Fclean rule
 fclean: clean
 	rm -f $(NAME)
 	$(MAKE) -C $(LIBFT) fclean
-	@echo "fclean"
+	# @echo "fclean"
 
 valgrind: $(NAME)
 	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) $(ARGS)
 
 # Rebuild everything
 re: fclean all
-	@echo "Done"
+	# @echo "Done"
 
-.PHONY: all clean fclean re $(LIBFT_A)
+# .PHONY: all clean fclean re

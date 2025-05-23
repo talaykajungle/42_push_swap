@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:15:33 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/05/21 20:23:50 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/22 17:17:09 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 	int		size;
 
 	if (argc == 1)
-		return (ft_printf("Error\n"), 1);
+		return (ft_printf(""), 0);
 	arg_check(argc, argv);
 	stacka = NULL;
 	stackb = NULL;

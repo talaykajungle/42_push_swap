@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:20:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/05/21 20:31:00 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/05/22 17:06:16 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Skips the minus sign if it encounters one
 Returns 1 if the string is a valid number, 0 if not
 */
 
-static int	num_check(char *n)
+static int	num_check(char *n, char **args, int argc)
 {
 	int	indx;
 	int	return_val;
@@ -54,7 +54,7 @@ static int	num_check(char *n)
 			indx++;
 		}
 		else
-			ft_error("Error: Arguments contain character(s)", 0, NULL);
+			ft_error("Error: Arguments contain character(s)", argc, args);
 	}
 	return (return_val);
 }
@@ -109,7 +109,7 @@ void	arg_check(int argc, char **argv)
 		indx = 1;
 	while (args[indx])
 	{
-		if (!num_check(args[indx]))
+		if (!num_check(args[indx], args, argc))
 			ft_error("Error: Arguments contain character(s)", argc, args);
 		temp = ft_atoi(args[indx], &error);
 		if (dup_check(args, temp, indx))

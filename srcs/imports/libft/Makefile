@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 libft.a: $(OBJ)
-#.SILENT: $(OBJS) $(NAME) $(LIBFT_A)
+.SILENT: $(OBJS) $(NAME) $(LIBFT_A)
 
 NAME = libft.a
 
@@ -21,25 +21,25 @@ CFLAGS = -Wall -Wextra -Werror
 
 
 all: $(NAME)
-	@echo "Done"
+	# @echo "Done"
 
 $(NAME): $(OBJS)
 	@ar $(ARFLAGS) $(NAME) $(OBJS) >/dev/null 2>&1
-	@echo "Done"
+	# @echo "Done"
 
 so: $(OBJS) $(OBJS_BONUS)
 	@$(CC) -nostartfiles -fPIC $(CFLAGS) -shared -o $(NAME).so $(OBJS) $(OBJS_BONUS)
-	@echo "Done"
+	# @echo "Done"
 
 clean:
 	$(RM) $(OBJS)
-	@echo "clean"
+	# @echo "clean"
 
 fclean: clean
 	$(RM) $(NAME) $(NAME).so
-	@echo "fclean"
+	# @echo "fclean"
 
 re: fclean $(NAME)
-	@echo "Done"
+	# @echo "Done"
 
-.PHONY: all clean fclean re bonus so
+.PHONY: all clean fclean re
